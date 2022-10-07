@@ -48,10 +48,10 @@ export const aboutData: About = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Munich based <strong className="text-stone-100">Software Engineer</strong>, currently working
-        as a Consultant and Software Craftsman at <strong className="text-stone-100">TMajor Consulting</strong> and a Principal Engineer
-        at <strong className="text-stone-100">JSMD Group</strong> bringing Engineers together and building high quality, maintainable
-        and amazing Software in the process.
+        I'm a Munich based <strong className="text-stone-100">Software Craftsman</strong>, currently working
+        as a Software Engineering Consultant at <strong className="text-stone-100">TMajor Consulting</strong> and a Principal Engineer
+        at <strong className="text-stone-100">JSMD Group</strong>, bringing Engineers together to build high quality, maintainable
+        and amazing Software.
       </p>
     </>
   ),
