@@ -48,8 +48,8 @@ export const aboutData: About = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Munich based <strong className="text-stone-100">Software Craftsman</strong>, currently working
-        as a Freelance Consultant at <strong className="text-stone-100">TMajor Consulting</strong> and a Principal Engineer
+        I'm a Munich based <strong className="text-stone-100">Software Engineer</strong>, currently working
+        as a Consultant and Software Craftsman at <strong className="text-stone-100">TMajor Consulting</strong> and a Principal Engineer
         at <strong className="text-stone-100">JSMD Group</strong> bringing Engineers together and building high quality, maintainable
         and amazing Software in the process.
       </p>
@@ -191,7 +191,7 @@ export const experience: TimelineItem[] = [
     title: 'Freelance Software Consultant',
     content: (
       <p>
-        As a Software Consultant I help my clients design, architect and build the systems they need to achieve their goals in a maintainable way. Apart from these I can also offer my expertise in building and scaling up teams, as well as ensuring the code delivered by teams lives up to a high technical standard.
+        As a Software Consultant I help my clients design, architect and build the systems they need to achieve their goals in a maintainable way. Furthermore I can also offer my expertise in building and scaling up teams, as well as ensuring the code delivered by teams lives up to a high technical standard.
       </p>
     ),
   },
