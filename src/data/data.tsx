@@ -3,7 +3,7 @@ import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 
 // @ts-ignore
-import heroImage from '../images/header-background.jpeg';
+import heroImage from '../images/header-background2.jpeg';
 import profilepic from '../images/profilepic.png';
 
 import {
@@ -49,8 +49,8 @@ export const aboutData: About = {
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a Munich based <strong className="text-stone-100">Software Craftsman</strong>, currently working
-        as a Software Engineering Consultant at <strong className="text-stone-100">TMajor Consulting</strong> and a Principal Engineer
-        at <strong className="text-stone-100">JSMD Group</strong>, bringing Engineers together to build high quality, maintainable
+        as a Software Engineering Consultant at <strong className="text-stone-100">TMajor Consulting</strong> and an Engineering Manager
+        at <strong className="text-stone-100">JSMD Group</strong>, guiding and empowering teams to build high quality, maintainable
         and amazing Software.
       </p>
     </>
@@ -196,14 +196,32 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    startDate: 'March 2021',
+    startDate: 'July 2023',
     endDate: 'Present',
+    company: 'Jochen Schweizer mydays Group',
+    location: 'Munich',
+    title: 'Engineering Manager',
+    content: (
+      <p>
+        On a journey to learn and grow together with my team.
+      </p>
+    ),
+  },
+  {
+    startDate: 'March 2021',
+    endDate: 'Jun 2023',
     company: 'Jochen Schweizer mydays Group',
     location: 'Munich',
     title: 'Principal Engineer',
     content: (
       <p>
-        As a Principal Engineer I am working with multiple teams, guiding them in growth and ensuring all the best practices are lived every day. I am working closely with the architects on designing our entire platform and bringing these designs back to the teams. I am a key partner for any technical related questions or concerns to the stakeholders, as well as externally representing the entire company in recruiting and the tech scene.
+        As a Principal Engineer, I worked closely with multiple teams to ensure that engineering best practices are implemented and followed consistently. Through my guidance and coaching, I have helped these teams to grow and develop into highly efficient units that deliver high-quality software solutions.
+        I worked closely with the architects on designing and architecting the company tech platform and then ensuring that the teams are implementing the architectural vision.
+        I drove the discovery and implementation of multiple 3rd party tools, considering technical fit, as well as implementation and running costs.
+        I was a key contact person for any technical questions or concerns to the stakeholders. I worked on establishing transparent communication with them and implemented clear ways of cross-functional collaboration.
+        I took an active part in recruiting, starting from the initial screening of incoming CVs, through conducting technical interviews for roles ranging from Juniors to Solution Architects, all the way to onboarding new team members into the teams.
+        I conducted regular 1on1 meeting with the Engineers on my teams to help them solve any day-to-day issues as well as coaching sessions aimed at helping them advance their careers.
+        I took an active role in the Culture Ambassador Circle, and initiative aimed at bridging the gap between C-Level, HR and the rest of the company. My focus areas were ensuring transparent communication and bringing the company values alive in the day-to-day life of the engineering teams.
       </p>
     ),
   },

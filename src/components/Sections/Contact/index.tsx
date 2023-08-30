@@ -44,7 +44,7 @@ const Contact: FC = memo(() => {
                         <dd className="flex items-center">
                           <a
                             className={classNames(
-                              '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-600',
+                              '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600',
                               {'hover:text-white': href},
                             )}
                             href={href}
@@ -75,7 +75,7 @@ const Contact: FC = memo(() => {
           {/*          <dd className="flex items-center">*/}
           {/*            <a*/}
           {/*              className={classNames(*/}
-          {/*                '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-green-600',*/}
+          {/*                '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600',*/}
           {/*                {'hover:text-white': href},*/}
           {/*              )}*/}
           {/*              href={href}*/}
