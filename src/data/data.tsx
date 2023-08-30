@@ -44,7 +44,7 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const aboutData: About = {
   imageSrc: heroImage,
-  name: `Tamas Flucsa Major.`,
+  name: `Tamas Flucsa Major`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
