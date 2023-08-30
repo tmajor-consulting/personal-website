@@ -74,7 +74,7 @@ export const aboutData: About = {
  * Principles section
  */
 export const principlesData: Principles = {
-  description: `Following the Programmers Oath by Robert C. Martin - In order to defend and preserve the honor of the profession of computer programmers, I Promise that, to the best of my ability and judgement:`,
+  description: `Following the Programmers Oath by Robert C. Martin - In order to defend and preserve the honor of the profession of computer programmers, I promise that, to the best of my ability and judgement:`,
   principlesItems: [
     {text: 'I will not produce harmful code.'},
     {text: 'The code that I produce will always be my best work. I will not knowingly allow code that is defective either in behavior or structure to accumulate.'},
@@ -109,7 +109,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'German',
-        level: 8,
+        level: 9,
       },
     ],
   },
@@ -122,15 +122,15 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Microservices',
-        level: 9,
+        level: 10,
       },
       {
         name: 'Event Driven Systems',
-        level: 9,
+        level: 10,
       },
       {
         name: 'Object Oriented Programming',
-        level: 8,
+        level: 9,
       },
     ],
   },
@@ -139,7 +139,7 @@ export const skills: SkillGroup[] = [
     skills: [
       {
         name: 'Node.js',
-        level: 10,
+        level: 9,
       },
       {
         name: 'Nest.js',
@@ -147,11 +147,11 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Typescript',
-        level: 8,
+        level: 9,
       },
       {
         name: 'React',
-        level: 4,
+        level: 5,
       },
     ],
   },
@@ -172,7 +172,7 @@ export const skills: SkillGroup[] = [
       },
       {
         name: 'Mentoring',
-        level: 4,
+        level: 6,
       },
     ],
   },
@@ -184,10 +184,10 @@ export const skills: SkillGroup[] = [
 
 export const experience: TimelineItem[] = [
   {
-    startDate: 'October 2021',
+    startDate: 'Oct. 2021',
     endDate: 'Present',
     company: 'TMajor Consulting',
-    location: 'Munich',
+    location: 'Munich, Germany',
     title: 'Freelance Software Consultant',
     content: (
       <p>
@@ -196,10 +196,10 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    startDate: 'July 2023',
+    startDate: 'Jul. 2023',
     endDate: 'Present',
     company: 'Jochen Schweizer mydays Group',
-    location: 'Munich',
+    location: 'Munich, Germany',
     title: 'Engineering Manager',
     content: (
       <p>
@@ -208,28 +208,28 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    startDate: 'March 2021',
-    endDate: 'Jun 2023',
+    startDate: 'Mar. 2021',
+    endDate: 'Jun. 2023',
     company: 'Jochen Schweizer mydays Group',
-    location: 'Munich',
+    location: 'Munich, Germany',
     title: 'Principal Engineer',
     content: (
       <p>
         As a Principal Engineer, I worked closely with multiple teams to ensure that engineering best practices are implemented and followed consistently. Through my guidance and coaching, I have helped these teams to grow and develop into highly efficient units that deliver high-quality software solutions.
-        I worked closely with the architects on designing and architecting the company tech platform and then ensuring that the teams are implementing the architectural vision.
-        I drove the discovery and implementation of multiple 3rd party tools, considering technical fit, as well as implementation and running costs.
-        I was a key contact person for any technical questions or concerns to the stakeholders. I worked on establishing transparent communication with them and implemented clear ways of cross-functional collaboration.
-        I took an active part in recruiting, starting from the initial screening of incoming CVs, through conducting technical interviews for roles ranging from Juniors to Solution Architects, all the way to onboarding new team members into the teams.
-        I conducted regular 1on1 meeting with the Engineers on my teams to help them solve any day-to-day issues as well as coaching sessions aimed at helping them advance their careers.
-        I took an active role in the Culture Ambassador Circle, and initiative aimed at bridging the gap between C-Level, HR and the rest of the company. My focus areas were ensuring transparent communication and bringing the company values alive in the day-to-day life of the engineering teams.
+        <br/>I worked closely with the architects on designing and architecting the company tech platform and then ensuring that the teams are implementing the architectural vision.
+        <br/>I drove the discovery and implementation of multiple 3rd party tools, considering technical fit, as well as implementation and running costs.
+        <br/>I was a key contact person for any technical questions or concerns to the stakeholders. I worked on establishing transparent communication with them and implemented clear ways of cross-functional collaboration.
+        <br/>I took an active part in recruiting, starting from the initial screening of incoming CVs, through conducting technical interviews for roles ranging from Juniors to Solution Architects, all the way to onboarding new team members into the teams.
+        <br/>I conducted regular 1on1 meeting with the Engineers on my teams to help them solve any day-to-day issues as well as coaching sessions aimed at helping them advance their careers.
+        <br/>I took an active role in the Culture Ambassador Circle, and initiative aimed at bridging the gap between C-Level, HR and the rest of the company. My focus areas were ensuring transparent communication and bringing the company values alive in the day-to-day life of the engineering teams.
       </p>
     ),
   },
   {
-    startDate: 'July 2019',
-    endDate: 'February 2021',
+    startDate: 'Jul. 2019',
+    endDate: 'Feb. 2021',
     company: 'Jochen Schweizer mydays Group',
-    location: 'Munich',
+    location: 'Munich, Germany',
     title: 'Fullstack Software Engineer',
     content: (
       <p>
@@ -238,10 +238,10 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    startDate: 'April 2018',
-    endDate: 'Jun 2019',
+    startDate: 'Apr. 2018',
+    endDate: 'Jun. 2019',
     company: 'tecRacer GmbH & Co. KG',
-    location: 'Hannover',
+    location: 'Hannover, Germany',
     title: 'Senior Software Engineer',
     content: (
       <p>
@@ -250,10 +250,10 @@ export const experience: TimelineItem[] = [
     ),
   },
   {
-    startDate: 'March 2015',
-    endDate: 'March 2018',
+    startDate: 'Mar. 2015',
+    endDate: 'Mar. 2018',
     company: 'tecRacer GmbH & Co. KG',
-    location: 'Hannover',
+    location: 'Hannover, Germany',
     title: 'Software Engineer',
     content: (
       <p>
