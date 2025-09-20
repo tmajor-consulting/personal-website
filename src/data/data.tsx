@@ -213,17 +213,17 @@ export const experience: TimelineItem[] = [
       <p>
         Member of the company’s technology board, a cross-unit leadership forum acting as the de-facto CTO function.
         Together with other senior engineering leaders, made final decisions on long-term technical strategy, architecture
-        direction, and technology investments for 8 teams across 4 business units. Drove alignment on platform evolution,
-        system scalability, and technical dependencies. Lead implementation of tech-board decisions within my area,
-        ensuring my team delivers on strategic objectives. Currently spearheading initiatives to formalize architecture
+        direction, and technology investments for 8 teams across 4 business units.  <br/>Drove alignment on platform evolution,
+        system scalability, and technical dependencies.  <br/>Lead implementation of tech-board decisions within my area,
+        ensuring my team delivers on strategic objectives.  <br/>Currently spearheading initiatives to formalize architecture
         documentation and improve governance processes.
-        <br/>Lead a team of 6 engineers in the design, development, and implementation of features from conception to
+        <br/> <br/>Lead a team of 6 engineers in the design, development, and implementation of features from conception to
         completion, ensuring adherence to quality standards, budget constraints, and project timelines. (Examples: Unified
         product data structure and product discovery process for 2 e-commerce brands; Communication and Data sync with
         SAP, Yotpo, ProductsUp)
-        <br/>Collaborated with cross-functional stakeholders to discover the best path for improving our product, prioritize feature
+        <br/> <br/>Collaborated with cross-functional stakeholders to discover the best path for improving our product, prioritize feature
         development, address technical challenges, and deliver high-quality solutions that meet customer requirements.
-        <br/>Mentored and coached team members through regular 1-on-1 meetings to foster a culture of learning, growth and
+        <br/> <br/>Mentored and coached team members through regular 1-on-1 meetings to foster a culture of learning, growth and
         build a team where everyone is a leader.
       </p>
     ),
@@ -237,16 +237,16 @@ export const experience: TimelineItem[] = [
     content: (
       <p>
         Worked closely with multiple teams to ensure engineering best practices were implemented and followed.
-        <br/>Collaborated with architects to design and implement the company's technology platform, ensuring scalability and
+        <br/> <br/>Collaborated with architects to design and implement the company's technology platform, ensuring scalability and
         efficiency (multi-tenant e-commerce solution using React micro-frontends and an event-driven microservice based
         backend powered by Kafka)
-        <br/>Researched, evaluated, and integrated third-party tools to improve engineering workflows while considering technical
+        <br/> <br/>Researched, evaluated, and integrated third-party tools to improve engineering workflows while considering technical
         fit and cost. (Yotpo as external review management tool, Algolia as an AI powered search engine)
-        <br/>Acted as a key technical point of contact for stakeholders, ensuring transparent communication and effective
+        <br/> <br/>Acted as a key technical point of contact for stakeholders, ensuring transparent communication and effective
         collaboration.
-        <br/>Played a major role in recruitment, screening CVs, conducting technical interviews and onboarding engineers, ranging
+        <br/> <br/>Played a major role in recruitment, screening CVs, conducting technical interviews and onboarding engineers, ranging
         from juniors to architects. (200+ CVs reviewed, 30+ Technical interviews, 5 new Hires in 2 Teams)
-        <br/>Conducted regular 1-on-1 meetings with engineers, providing mentorship and career guidance.
+        <br/> <br/>Conducted regular 1-on-1 meetings with engineers, providing mentorship and career guidance.
       </p>
     ),
   },
@@ -260,9 +260,9 @@ export const experience: TimelineItem[] = [
       <p>
         Developed and implemented new features from conception to production, collaborating closely with Product Owners
         and Architects.
-        <br/>Helped introduce and implement an E2E testing framework, which became a key part of the company's quality
+        <br/> <br/>Helped introduce and implement an E2E testing framework, which became a key part of the company's quality
         assurance process.
-        <br/>Served as a team representative in the Nexus Scrum model, coordinating tasks between teams, unblocking engineers,
+        <br/> <br/>Served as a team representative in the Nexus Scrum model, coordinating tasks between teams, unblocking engineers,
         and facilitating communication between technical and non-technical stakeholders.
       </p>
     ),
@@ -277,10 +277,10 @@ export const experience: TimelineItem[] = [
       <p>
         Developed web-based applications in an agile environment, working closely with customers to refine requirements
         and deliver high-quality solutions.
-        <br/>Maintained and extended legacy code for long-running projects and built new applications from scratch.
-        <br/>Acted as a key communication bridge between customers and developers, ensuring requirements were clear and
+        <br/> <br/>Maintained and extended legacy code for long-running projects and built new applications from scratch.
+        <br/> <br/>Acted as a key communication bridge between customers and developers, ensuring requirements were clear and
         technical solutions met expectations.
-        <br/>Provided support, and issue resolution under tight deadlines to ensure smooth operation of critical systems.
+        <br/> <br/>Provided support, and issue resolution under tight deadlines to ensure smooth operation of critical systems.
       </p>
     ),
   },
