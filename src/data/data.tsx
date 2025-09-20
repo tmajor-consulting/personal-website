@@ -50,8 +50,12 @@ export const aboutData: About = {
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
         I'm a Munich based <strong className="text-stone-100">Software Craftsman</strong>, currently working
         as a Software Engineering Consultant at <strong className="text-stone-100">TMajor Consulting</strong> and an Engineering Manager
-        at <strong className="text-stone-100">JSMD Group</strong>, guiding and empowering teams to build high quality, maintainable
-        and amazing Software.
+        at <strong className="text-stone-100">JSMD Group</strong>.
+        During my career, I have focused on empathy, transparency, honesty, open communication and collaboration within my
+        teams, as well as with stakeholders. I enjoy continuous learning, mentoring engineers, driving technical excellence,
+        building scalable software architectures, improving processes and working cross functionally to turn ideas into reality. My
+        additional interest in finance and economics helps me weight the costs and benefits of technical decisions and consider
+        their broader business impact.
       </p>
     </>
   ),
@@ -132,6 +136,10 @@ export const skills: SkillGroup[] = [
         name: 'Object Oriented Programming',
         level: 9,
       },
+      {
+        name: 'AI Integration (LLMs, Agentic AI) - Learning now',
+        level: 2,
+      },
     ],
   },
   {
@@ -203,7 +211,20 @@ export const experience: TimelineItem[] = [
     title: 'Engineering Manager',
     content: (
       <p>
-        On a journey to learn and grow together with my team.
+        Member of the company’s technology board, a cross-unit leadership forum acting as the de-facto CTO function.
+        Together with other senior engineering leaders, made final decisions on long-term technical strategy, architecture
+        direction, and technology investments for 8 teams across 4 business units. Drove alignment on platform evolution,
+        system scalability, and technical dependencies. Lead implementation of tech-board decisions within my area,
+        ensuring my team delivers on strategic objectives. Currently spearheading initiatives to formalize architecture
+        documentation and improve governance processes.
+        <br/>Lead a team of 6 engineers in the design, development, and implementation of features from conception to
+        completion, ensuring adherence to quality standards, budget constraints, and project timelines. (Examples: Unified
+        product data structure and product discovery process for 2 e-commerce brands; Communication and Data sync with
+        SAP, Yotpo, ProductsUp)
+        <br/>Collaborated with cross-functional stakeholders to discover the best path for improving our product, prioritize feature
+        development, address technical challenges, and deliver high-quality solutions that meet customer requirements.
+        <br/>Mentored and coached team members through regular 1-on-1 meetings to foster a culture of learning, growth and
+        build a team where everyone is a leader.
       </p>
     ),
   },
@@ -215,13 +236,17 @@ export const experience: TimelineItem[] = [
     title: 'Principal Engineer',
     content: (
       <p>
-        As a Principal Engineer, I worked closely with multiple teams to ensure that engineering best practices are implemented and followed consistently. Through my guidance and coaching, I have helped these teams to grow and develop into highly efficient units that deliver high-quality software solutions.
-        <br/>I worked closely with the architects on designing and architecting the company tech platform and then ensuring that the teams are implementing the architectural vision.
-        <br/>I drove the discovery and implementation of multiple 3rd party tools, considering technical fit, as well as implementation and running costs.
-        <br/>I was a key contact person for any technical questions or concerns to the stakeholders. I worked on establishing transparent communication with them and implemented clear ways of cross-functional collaboration.
-        <br/>I took an active part in recruiting, starting from the initial screening of incoming CVs, through conducting technical interviews for roles ranging from Juniors to Solution Architects, all the way to onboarding new team members into the teams.
-        <br/>I conducted regular 1on1 meeting with the Engineers on my teams to help them solve any day-to-day issues as well as coaching sessions aimed at helping them advance their careers.
-        <br/>I took an active role in the Culture Ambassador Circle, and initiative aimed at bridging the gap between C-Level, HR and the rest of the company. My focus areas were ensuring transparent communication and bringing the company values alive in the day-to-day life of the engineering teams.
+        Worked closely with multiple teams to ensure engineering best practices were implemented and followed.
+        <br/>Collaborated with architects to design and implement the company's technology platform, ensuring scalability and
+        efficiency (multi-tenant e-commerce solution using React micro-frontends and an event-driven microservice based
+        backend powered by Kafka)
+        <br/>Researched, evaluated, and integrated third-party tools to improve engineering workflows while considering technical
+        fit and cost. (Yotpo as external review management tool, Algolia as an AI powered search engine)
+        <br/>Acted as a key technical point of contact for stakeholders, ensuring transparent communication and effective
+        collaboration.
+        <br/>Played a major role in recruitment, screening CVs, conducting technical interviews and onboarding engineers, ranging
+        from juniors to architects. (200+ CVs reviewed, 30+ Technical interviews, 5 new Hires in 2 Teams)
+        <br/>Conducted regular 1-on-1 meetings with engineers, providing mentorship and career guidance.
       </p>
     ),
   },
@@ -233,31 +258,29 @@ export const experience: TimelineItem[] = [
     title: 'Fullstack Software Engineer',
     content: (
       <p>
-        As a full stack Software Engineer in one of the self-organising teams, I have worked on the implementation of new features, starting with the discovery and design phase - where I actively collaborated with POs and Architects, breaking down the requirements from a user- as well as technical-perspectives - and driving them through implementation, testing with our team all the way to deployment and maintenance on the production system.
-      </p>
-    ),
-  },
-  {
-    startDate: 'Apr. 2018',
-    endDate: 'Jun. 2019',
-    company: 'tecRacer GmbH & Co. KG',
-    location: 'Hannover, Germany',
-    title: 'Senior Software Engineer',
-    content: (
-      <p>
-        Worked as part of an Agile software development team, developing web based applications together with the customers in an interactive, dynamic process. Helped coach more junior team members. Helped take technical decisions on the architecture of new projects.
+        Developed and implemented new features from conception to production, collaborating closely with Product Owners
+        and Architects.
+        <br/>Helped introduce and implement an E2E testing framework, which became a key part of the company's quality
+        assurance process.
+        <br/>Served as a team representative in the Nexus Scrum model, coordinating tasks between teams, unblocking engineers,
+        and facilitating communication between technical and non-technical stakeholders.
       </p>
     ),
   },
   {
     startDate: 'Mar. 2015',
-    endDate: 'Mar. 2018',
+    endDate: 'Jun. 2019',
     company: 'tecRacer GmbH & Co. KG',
     location: 'Hannover, Germany',
-    title: 'Software Engineer',
+    title: '(Senior) Software Engineer',
     content: (
       <p>
-        Worked as part of an Agile software development team, developing web based applications together with the customers in an interactive, dynamic process.
+        Developed web-based applications in an agile environment, working closely with customers to refine requirements
+        and deliver high-quality solutions.
+        <br/>Maintained and extended legacy code for long-running projects and built new applications from scratch.
+        <br/>Acted as a key communication bridge between customers and developers, ensuring requirements were clear and
+        technical solutions met expectations.
+        <br/>Provided support, and issue resolution under tight deadlines to ensure smooth operation of critical systems.
       </p>
     ),
   },
