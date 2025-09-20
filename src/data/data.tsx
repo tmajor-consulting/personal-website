@@ -309,5 +309,5 @@ export const contact: ContactSection = {
 export const socialLinks: Social[] = [
   {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tmajor-consulting'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tam%C3%A1s-flucsa-major-985a5196'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tomymajor/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tamasflucsamajor/'},
 ];
