@@ -1,4 +1,4 @@
-import {DeviceMobileIcon, LocationMarkerIcon, MailIcon} from '@heroicons/react/outline';
+import {DevicePhoneMobileIcon, EnvelopeIcon, MapPinIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import {FC, memo} from 'react';
 import Image from 'next/image';
@@ -13,9 +13,9 @@ import TwitterIcon from '../../Icon/TwitterIcon';
 import Section from '../../Layout/Section';
 
 const ContactValueMap: Record<ContactType, ContactValue> = {
-  [ContactType.Email]: {Icon: MailIcon, srLabel: 'Email'},
-  [ContactType.Phone]: {Icon: DeviceMobileIcon, srLabel: 'Phone'},
-  [ContactType.Location]: {Icon: LocationMarkerIcon, srLabel: 'Location'},
+  [ContactType.Email]: {Icon: EnvelopeIcon, srLabel: 'Email'},
+  [ContactType.Phone]: {Icon: DevicePhoneMobileIcon, srLabel: 'Phone'},
+  [ContactType.Location]: {Icon: MapPinIcon, srLabel: 'Location'},
   [ContactType.Github]: {Icon: GithubIcon, srLabel: 'Github'},
   [ContactType.LinkedIn]: {Icon: LinkedInIcon, srLabel: 'LinkedIn'},
   [ContactType.Facebook]: {Icon: FacebookIcon, srLabel: 'Facebook'},
@@ -32,9 +32,9 @@ const Contact: FC = memo(() => {
           <div className="col-span-1 flex justify-center md:justify-start">
             <div className="flex flex-col gap-6 md:flex-row md:items-center">
               <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
-                <Image alt="about-me-image" layout="fill" objectFit="cover" src={profileImageSrc} />
+                <Image alt="about-me-image" fill className="object-cover" src={profileImageSrc} />
               </div>
-              <MailIcon className="hidden h-16 w-16 text-white md:block" />
+              <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
               <h2 className="text-2xl font-bold text-white">{headerText}</h2>
                   {items.map(({type, text, href}) => {
                     const {Icon, srLabel} = ContactValueMap[type];

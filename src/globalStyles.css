@@ -1,6 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --animate-typing: typing 3.5s ease-in-out infinite;
+  --animate-blink: blink 1s step-start infinite;
+  --animate-rotate-loader: rotate-loader 1.4s linear infinite;
+}
+
+@keyframes typing {
+  0%, 100% { width: 0%; }
+  30%, 70% { width: 100%; }
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+}
+
+@keyframes rotate-loader {
+  0% { transform: rotate(0deg); stroke-dashoffset: 360%; }
+  100% { transform: rotate(360deg); stroke-dashoffset: -360%; }
+}
+
+/* touch breakpoint: coarse pointer devices (replaces v3 raw media query) */
+@custom-variant touch (@media (pointer: coarse));
 
 @layer utilities {
   /* Chrome, Safari and Opera */

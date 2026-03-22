@@ -1,8 +1,8 @@
-import {FC, SVGProps} from 'react';
+import {FC, PropsWithChildren, ReactElement, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
 
-export interface HomepageMeta {
+export type HomepageMeta = PropsWithChildren<{
   title: string;
   description: string;
   ogImageUrl?: string;
@@ -14,7 +14,7 @@ export interface HomepageMeta {
   twitterUrl?: string;
   twitterDescription?: string;
   twitterImageUrl?: string;
-}
+}>;
 
 /**
  * About section
@@ -22,7 +22,7 @@ export interface HomepageMeta {
 export interface About {
   imageSrc: string;
   name: string;
-  description: JSX.Element;
+  description: ReactElement;
   actions: AboutActionItem[];
 }
 
@@ -30,7 +30,7 @@ interface AboutActionItem {
   href: string;
   text: string;
   primary?: boolean;
-  Icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  Icon?: (props: SVGProps<SVGSVGElement>) => ReactElement;
 }
 
 /**
@@ -69,7 +69,7 @@ export interface TimelineItem {
   location: string;
   company: string;
   title: string;
-  content: JSX.Element;
+  content: ReactElement;
 }
 
 /**
@@ -102,7 +102,7 @@ export interface ContactItem {
 }
 
 export interface ContactValue {
-  Icon: FC<IconProps> | ((props: SVGProps<SVGSVGElement>) => JSX.Element);
+  Icon: FC<IconProps> | ((props: SVGProps<SVGSVGElement>) => ReactElement);
   srLabel: string;
 }
 

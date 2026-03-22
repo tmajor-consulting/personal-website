@@ -21,9 +21,8 @@ const useWindow = (): WindowSize => {
   // Set size at the first client-side load
   useEffect(() => {
     window.addEventListener('resize', handleSize);
-    handleSize();
+    handleSize(); // eslint-disable-line react-hooks/set-state-in-effect
     return () => window.removeEventListener('resize', handleSize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return windowSize;

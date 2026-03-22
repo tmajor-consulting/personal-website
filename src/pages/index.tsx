@@ -9,7 +9,6 @@ import Resume from '../components/Sections/Resume';
 import {homePageMeta} from '../data/data';
 import Principles from "../components/Sections/Principles";
 
-// eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
 
 const Home: FC = memo(() => {
