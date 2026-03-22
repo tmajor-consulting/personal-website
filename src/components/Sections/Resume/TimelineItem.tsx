@@ -26,14 +26,14 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
 
 
   return (
-    <div className="flex flex-col pb-8 text-center last:pb-0 md:text-left">
-      <div className="flex flex-col pb-4">
-        <h2 className="text-xl font-bold">{title}</h2>
-        <div className="text-l font-bold">{company}</div>
-        <div className="flex items-center justify-center gap-x-2 md:justify-start">
-          <span className="flex-1 text-sm font-medium italic sm:flex-none">{location}</span>
-          <span>•</span>
-          <span className="flex-1 text-sm sm:flex-none">{startDate} - {endDate}</span>
+    <div className="flex flex-col pb-8 text-center text-neutral-300 last:pb-0 md:text-left">
+      <div className="flex flex-col border-l-2 border-yellow-600 pl-4 pb-4">
+        <h2 className="text-xl font-bold text-white">{title}</h2>
+        <div className="text-base font-semibold text-yellow-500">{company}</div>
+        <div className="mt-1 flex items-center justify-center gap-x-2 md:justify-start">
+          <span className="flex-1 text-sm italic text-neutral-500 sm:flex-none">{location}</span>
+          <span className="text-neutral-600">•</span>
+          <span className="flex-1 text-sm text-neutral-500 sm:flex-none">{startDate} – {endDate}</span>
         </div>
       </div>
       {content}

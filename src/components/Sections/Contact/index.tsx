@@ -1,5 +1,4 @@
 import {DevicePhoneMobileIcon, EnvelopeIcon, MapPinIcon} from '@heroicons/react/24/outline';
-import classNames from 'classnames';
 import {FC, memo} from 'react';
 import Image from 'next/image';
 
@@ -27,69 +26,37 @@ const Contact: FC = memo(() => {
   const {headerText, items, profileImageSrc} = contact;
   return (
     <Section className="bg-neutral-800" sectionId={SectionId.Contact}>
-      <div className={classNames('grid grid-cols-1 gap-y-6')}>
-        {!!profileImageSrc && (
-          <div className="col-span-1 flex justify-center md:justify-start">
-            <div className="flex flex-col gap-6 md:flex-row md:items-center">
-              <div className="relative h-24 w-24 overflow-hidden rounded-xl md:h-32 md:w-32">
-                <Image alt="about-me-image" fill className="object-cover" src={profileImageSrc} />
+      <div className="flex justify-center">
+        <div className="w-full max-w-md rounded-2xl bg-neutral-700/50 p-8 shadow-xl">
+          {!!profileImageSrc && (
+            <div className="mb-6 flex flex-col items-center gap-4">
+              <div className="relative h-28 w-28 overflow-hidden rounded-full ring-4 ring-yellow-600/50">
+                <Image alt="profile" fill className="object-cover" src={profileImageSrc} />
               </div>
-              <EnvelopeIcon className="hidden h-16 w-16 text-white md:block" />
               <h2 className="text-2xl font-bold text-white">{headerText}</h2>
-                  {items.map(({type, text, href}) => {
-                    const {Icon, srLabel} = ContactValueMap[type];
-                    return (
-                      <div key={srLabel}>
-                        <dt className="sr-only">{srLabel}</dt>
-                        <dd className="flex items-center">
-                          <a
-                            className={classNames(
-                              '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600',
-                              {'hover:text-white': href},
-                            )}
-                            href={href}
-                            target="_blank">
-                            <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-neutral-100 sm:h-5 sm:w-5" />
-                            <span className="ml-3 text-sm sm:text-base">{text}</span>
-                          </a>
-                        </dd>
-                      </div>
-                    );
-                  })}
             </div>
-          </div>
-
-        )}
-        {/*<div className="grid grid-cols-1 gap-6 md:grid-cols-2">*/}
-          {/*// TODO implement contact form; potentially with https://sendgrid.com/ or https://javascript.plainenglish.io/how-to-build-a-contact-form-in-react-that-sends-emails-using-emailjs-70011d2563a3*/}
-          {/*<div className="order-2 col-span-1 md:order-1 ">*/}
-          {/*  <ContactForm />*/}
-          {/*</div>*/}
-          {/*<div className="order-1 col-span-1 flex flex-col gap-y-4 md:order-2">*/}
-          {/*  <dl className="flex flex-col space-y-4 text-base text-neutral-500 sm:space-y-2">*/}
-          {/*    {items.map(({type, text, href}) => {*/}
-          {/*      const {Icon, srLabel} = ContactValueMap[type];*/}
-          {/*      return (*/}
-          {/*        <div key={srLabel}>*/}
-          {/*          <dt className="sr-only">{srLabel}</dt>*/}
-          {/*          <dd className="flex items-center">*/}
-          {/*            <a*/}
-          {/*              className={classNames(*/}
-          {/*                '-m-2 flex rounded-md p-2 text-neutral-300 hover:text-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-600',*/}
-          {/*                {'hover:text-white': href},*/}
-          {/*              )}*/}
-          {/*              href={href}*/}
-          {/*              target="_blank">*/}
-          {/*              <Icon aria-hidden="true" className="h-4 w-4 flex-shrink-0 text-neutral-100 sm:h-5 sm:w-5" />*/}
-          {/*              <span className="ml-3 text-sm sm:text-base">{text}</span>*/}
-          {/*            </a>*/}
-          {/*          </dd>*/}
-          {/*        </div>*/}
-          {/*      );*/}
-          {/*    })}*/}
-          {/*  </dl>*/}
-          {/*</div>*/}
-        {/*</div>*/}
+          )}
+          <dl className="flex flex-col gap-y-4">
+            {items.map(({type, text, href}) => {
+              const {Icon, srLabel} = ContactValueMap[type];
+              return (
+                <div key={srLabel}>
+                  <dt className="sr-only">{srLabel}</dt>
+                  <dd>
+                    <a
+                      className="group flex items-center gap-3 rounded-lg p-2 text-neutral-300 transition-colors duration-200 hover:bg-neutral-600/50 hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-600"
+                      href={href}
+                      rel="noopener noreferrer"
+                      target="_blank">
+                      <Icon aria-hidden="true" className="h-5 w-5 flex-shrink-0 text-yellow-600 group-hover:text-yellow-400" />
+                      <span className="text-sm sm:text-base">{text}</span>
+                    </a>
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+        </div>
       </div>
     </Section>
   );

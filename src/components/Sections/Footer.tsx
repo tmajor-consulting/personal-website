@@ -17,7 +17,7 @@ const Footer: FC = memo(() => (
       <div className="flex gap-x-4 text-neutral-500">
         <Socials />
       </div>
-      <span className="text-sm text-neutral-700">© Copyright 2022 Tamas Flucsa Major</span>
+      <span className="text-sm text-neutral-700">© {new Date().getFullYear()} Tamas Flucsa Major</span>
     </div>
   </div>
 ));
