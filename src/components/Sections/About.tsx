@@ -17,6 +17,14 @@ const About: FC = memo(() => {
   const [displayed, setDisplayed] = useState('');
   const [titleIndex, setTitleIndex] = useState(0);
   const [phase, setPhase] = useState<'typing' | 'pausing' | 'erasing'>('typing');
+  const [heroHeight, setHeroHeight] = useState<number | null>(null);
+
+  useEffect(() => {
+    // Lock to window.innerHeight on mount to prevent iOS Safari's visual scale
+    // when the browser chrome (address bar) hides on scroll. Viewport units
+    // (svh/dvh/vh) all trigger a compositor-level zoom on iOS; a fixed px value does not.
+    setHeroHeight(window.innerHeight);
+  }, []);
 
   useEffect(() => {
     const title = titles[titleIndex];
@@ -45,8 +53,13 @@ const About: FC = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.About}>
       <div
-        className="relative flex h-svh w-screen overflow-hidden items-center justify-center pt-20 sm:pt-0"
-        style={{backgroundImage: `url(${(imageSrc as unknown as {src: string}).src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        className="relative flex w-screen overflow-hidden items-center justify-center pt-20 sm:pt-0"
+        style={{
+          height: heroHeight ? `${heroHeight}px` : '100svh',
+          backgroundImage: `url(${(imageSrc as unknown as {src: string}).src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}>
         <div className="z-10 max-w-screen-lg px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/10 p-6 text-center shadow-lg backdrop-blur-md">
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
