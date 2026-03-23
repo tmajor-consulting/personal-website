@@ -1,6 +1,5 @@
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import Image from 'next/image';
 import {FC, memo, useEffect, useState} from 'react';
 
 import {aboutData, SectionId} from '../../data/data';
@@ -45,15 +44,9 @@ const About: FC = memo(() => {
 
   return (
     <Section noPadding sectionId={SectionId.About}>
-      <div className="relative flex h-svh w-screen overflow-hidden items-center justify-center pt-20 sm:pt-0">
-        <Image
-          alt={`${name}-image`}
-          className="absolute z-0 object-cover will-change-transform"
-          fill
-          placeholder="blur"
-          priority
-          src={imageSrc}
-        />
+      <div
+        className="relative flex h-svh w-screen overflow-hidden items-center justify-center pt-20 sm:pt-0"
+        style={{backgroundImage: `url(${imageSrc.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
         <div className="z-10 max-w-screen-lg px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/10 p-6 text-center shadow-lg backdrop-blur-md">
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
