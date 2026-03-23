@@ -45,7 +45,7 @@ const About: FC = memo(() => {
 
   return (
     <Section noPadding sectionId={SectionId.About}>
-      <div className="relative flex h-screen w-screen items-center justify-center">
+      <div className="relative flex h-screen w-screen items-center justify-center pt-14 sm:pt-0">
         <Image
           alt={`${name}-image`}
           className="absolute z-0 object-cover"
