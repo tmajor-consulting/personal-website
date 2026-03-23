@@ -10,13 +10,13 @@ const Section: FC<PropsWithChildren<{sectionId: SectionId; sectionTitle?: string
 
     return (
       <section
-        className={classNames(className, {'px-4 py-16 md:py-24 lg:px-8': !noPadding})}
+        className={classNames(className, {'px-4 pt-20 pb-16 sm:py-16 md:py-24 lg:px-8': !noPadding})}
         id={sectionId}
         ref={noPadding ? undefined : ref}>
         <div
           className={classNames(
             {'mx-auto max-w-screen-lg': !noPadding},
-            !noPadding && 'transition-all duration-700',
+            !noPadding && 'transition-[opacity,transform] duration-700',
             !noPadding && (inView ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'),
           )}>
           {children}

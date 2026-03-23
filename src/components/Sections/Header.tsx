@@ -68,13 +68,17 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
     const inactiveClass = classNames(baseClass, 'text-neutral-200 font-medium');
     return (
       <>
-        <button
-          aria-label="Menu Button"
-          className="fixed top-2 right-2 z-40 rounded-md bg-yellow-600 p-2 ring-offset-gray-800/60 hover:bg-yellow-500 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-yellow-600 focus-visible:ring-offset-2 sm:hidden"
-          onClick={toggleOpen}>
-          <Bars3BottomRightIcon className="h-8 w-8 text-white" />
-          <span className="sr-only">Open sidebar</span>
-        </button>
+        <header className="fixed top-0 z-50 w-full sm:hidden">
+          <div className="flex h-14 items-center justify-end bg-neutral-900/75 px-3 backdrop-blur-sm">
+            <button
+              aria-label="Menu Button"
+              className="rounded-md bg-yellow-600 p-2 ring-offset-gray-800/60 hover:bg-yellow-500 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-yellow-600 focus-visible:ring-offset-2"
+              onClick={toggleOpen}>
+              <Bars3BottomRightIcon className="h-6 w-6 text-white" />
+              <span className="sr-only">Open sidebar</span>
+            </button>
+          </div>
+        </header>
         <Transition.Root as={Fragment} show={isOpen}>
           <Dialog as="div" className="fixed inset-0 z-40 flex sm:hidden" onClose={toggleOpen}>
             <Transition.Child
@@ -96,7 +100,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full">
               <div className="relative w-4/5 bg-stone-800">
-                <nav className="mt-5 flex flex-col gap-y-2 px-2">
+                <nav className="mt-16 flex flex-col gap-y-2 px-2">
                   {navSections.map(section => (
                     <NavItem
                       activeClass={activeClass}
