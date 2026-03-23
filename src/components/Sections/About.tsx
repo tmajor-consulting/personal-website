@@ -24,7 +24,7 @@ const About: FC = memo(() => {
     // when the browser chrome (address bar) hides on scroll. Viewport units
     // (svh/dvh/vh) all trigger a compositor-level zoom on iOS; a fixed px value does not.
     if (containerRef.current) {
-      containerRef.current.style.height = `${window.innerHeight}px`;
+      containerRef.current.style.minHeight = `${window.innerHeight}px`;
     }
   }, []);
 
@@ -56,7 +56,7 @@ const About: FC = memo(() => {
     <Section noPadding sectionId={SectionId.About}>
       <div
         ref={containerRef}
-        className="relative flex h-svh w-screen items-center justify-center pt-20 sm:pt-0"
+        className="relative flex min-h-svh w-screen items-center justify-center pt-20 sm:pt-0"
         style={{
           backgroundImage: `url(${(imageSrc as unknown as {src: string}).src})`,
           backgroundSize: 'cover',
