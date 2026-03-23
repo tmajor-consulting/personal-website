@@ -3,7 +3,7 @@ import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 
 // @ts-ignore
-import heroImage from '../images/header-background2.jpeg';
+import heroImage from '../images/header-background2.webp';
 import profilepic from '../images/profilepic.png';
 
 import {
