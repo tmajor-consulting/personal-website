@@ -1,6 +1,6 @@
 import {ChevronDownIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
-import {FC, memo, useEffect, useState} from 'react';
+import {FC, memo, useEffect, useRef, useState} from 'react';
 
 import {aboutData, SectionId} from '../../data/data';
 import Section from '../Layout/Section';
@@ -17,13 +17,15 @@ const About: FC = memo(() => {
   const [displayed, setDisplayed] = useState('');
   const [titleIndex, setTitleIndex] = useState(0);
   const [phase, setPhase] = useState<'typing' | 'pausing' | 'erasing'>('typing');
-  const [heroHeight, setHeroHeight] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Lock to window.innerHeight on mount to prevent iOS Safari's visual scale
     // when the browser chrome (address bar) hides on scroll. Viewport units
     // (svh/dvh/vh) all trigger a compositor-level zoom on iOS; a fixed px value does not.
-    setHeroHeight(window.innerHeight);
+    if (containerRef.current) {
+      containerRef.current.style.height = `${window.innerHeight}px`;
+    }
   }, []);
 
   useEffect(() => {
@@ -53,9 +55,9 @@ const About: FC = memo(() => {
   return (
     <Section noPadding sectionId={SectionId.About}>
       <div
-        className="relative flex w-screen overflow-hidden items-center justify-center pt-20 sm:pt-0"
+        ref={containerRef}
+        className="relative flex h-svh w-screen overflow-hidden items-center justify-center pt-20 sm:pt-0"
         style={{
-          height: heroHeight ? `${heroHeight}px` : '100svh',
           backgroundImage: `url(${(imageSrc as unknown as {src: string}).src})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
