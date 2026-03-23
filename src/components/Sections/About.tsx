@@ -45,10 +45,10 @@ const About: FC = memo(() => {
 
   return (
     <Section noPadding sectionId={SectionId.About}>
-      <div className="relative flex h-svh w-screen items-center justify-center pt-20 sm:pt-0">
+      <div className="relative flex h-svh w-screen overflow-hidden items-center justify-center pt-20 sm:pt-0">
         <Image
           alt={`${name}-image`}
-          className="absolute z-0 object-cover"
+          className="absolute z-0 object-cover will-change-transform"
           fill
           placeholder="blur"
           priority
