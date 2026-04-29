@@ -1,6 +1,10 @@
+import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
+
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
+
+const DownloadIcon = (props: React.SVGProps<SVGSVGElement>) => <ArrowDownTrayIcon {...props} />;
 
 // @ts-ignore
 import heroImage from '../images/header-background2.webp';
@@ -48,27 +52,20 @@ export const aboutData: About = {
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Munich based <strong className="text-stone-100">Software Craftsman</strong>, currently working
-        as a Software Engineering Consultant at <strong className="text-stone-100">TMajor Consulting</strong> and an Engineering Manager
-        at <strong className="text-stone-100">JSMD Group</strong>.
-        During my career, I have focused on empathy, transparency, honesty, open communication and collaboration within my
-        teams, as well as with stakeholders. I enjoy continuous learning, mentoring engineers, driving technical excellence,
-        building scalable software architectures, improving processes and working cross functionally to turn ideas into reality. My
-        additional interest in finance and economics helps me weight the costs and benefits of technical decisions and consider
-        their broader business impact.
+        I build engineering cultures where teams are product partners — not feature factories. With 10+ years in software and 5+ in leadership, I specialise in empowering teams to challenge assumptions early, own outcomes fully, and ship software they're proud of.
       </p>
     </>
   ),
   actions: [
-    // {
-    //   href: '/assets/resume.pdf',
-    //   text: 'Resume',
-    //   primary: true,
-    //   Icon: DownloadIcon,
-    // },
+    {
+      href: '/assets/resume.pdf',
+      text: 'Download CV',
+      primary: true,
+      Icon: DownloadIcon,
+    },
     {
       href: `#${SectionId.Contact}`,
-      text: 'Contact',
+      text: 'Get in touch',
       primary: false,
     },
   ],
