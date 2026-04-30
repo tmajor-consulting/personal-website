@@ -64,7 +64,7 @@ const About: FC = memo(() => {
         }}>
         <div className="z-10 max-w-screen-lg px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/10 p-6 text-center shadow-lg backdrop-blur-md">
-            <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
+            <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
             <p className="min-h-[1.75rem] border-r-2 border-yellow-500 font-mono text-lg text-yellow-400 animate-blink sm:min-h-[2rem] sm:text-xl">
               {displayed}
             </p>
