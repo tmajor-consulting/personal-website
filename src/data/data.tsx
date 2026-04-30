@@ -1,7 +1,6 @@
 import {ArrowDownTrayIcon as DownloadIcon} from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
-import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 
 // @ts-ignore
@@ -211,7 +210,6 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tmajor-consulting'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tam%C3%A1s-flucsa-major-985a5196'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tamasflucsamajor/'},
+  {label: 'GitHub', Icon: GithubIcon, href: 'https://github.com/tmajor-consulting'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tamás-flucsa-major'},
 ];
