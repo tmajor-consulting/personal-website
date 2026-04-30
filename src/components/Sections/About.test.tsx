@@ -9,12 +9,9 @@ jest.mock('../../data/data', () => ({
     actions: [],
   },
   SectionId: {
-    About: 'About',
-    Contact: 'Contact',
-    Principles: 'Principles',
-    Resume: 'Resume',
-    Skills: 'Skills',
-    Stats: 'Stats',
+    About: 'about',
+    Contact: 'contact',
+    Highlights: 'highlights',
   },
 }));
 
