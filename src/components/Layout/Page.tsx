@@ -18,7 +18,6 @@ const Page: NextPage<HomepageMeta> = memo(({children, title, description}) => {
         {/* several domains list the same content, make sure google knows we mean this one. */}
         <link href={`https://www.tmajor.me${pathname}`} key="canonical" rel="canonical" />
 
-        <link href="/favicon.ico" rel="icon" sizes="any" />
         <link href="/icon.svg" rel="icon" type="image/svg+xml" />
         <link href="/site.webmanifest" rel="manifest" />
 

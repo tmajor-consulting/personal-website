@@ -101,7 +101,9 @@ const About: FC = memo(() => {
                       className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-stone-100"
                       href={href}
                       key={text}
-                      style={{color: 'var(--dark)'}}>
+                      rel="noopener noreferrer"
+                      style={{color: 'var(--dark)'}}
+                      target="_blank">
                       {Icon && <Icon className="h-3.5 w-3.5" />}
                       {text}
                     </a>
