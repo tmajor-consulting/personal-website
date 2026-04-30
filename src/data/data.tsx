@@ -1,17 +1,14 @@
-import {ArrowDownTrayIcon} from '@heroicons/react/24/outline';
+import {ArrowDownTrayIcon as DownloadIcon} from '@heroicons/react/24/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-
-const DownloadIcon = (props: React.SVGProps<SVGSVGElement>) => <ArrowDownTrayIcon {...props} />;
 
 // @ts-ignore
 import heroImage from '../images/header-background2.webp';
 import profilepic from '../images/profilepic.png';
 
 import {
-  Principles,
   ContactSection,
   ContactType,
   HomepageMeta,
@@ -33,12 +30,12 @@ export const homePageMeta: HomepageMeta = {
  * Section definition
  */
 export const SectionId = {
-  About: 'About',
-  Principles: 'Principles',
-  Contact: 'Contact',
-  Resume: 'Resume',
-  Skills: 'Skills',
-  Stats: 'Stats',
+  About: 'about',
+  Highlights: 'highlights',
+  Resume: 'experience',
+  Skills: 'skills',
+  Consulting: 'consulting',
+  Contact: 'contact',
 } as const;
 
 export type SectionId = typeof SectionId[keyof typeof SectionId];
@@ -61,6 +58,7 @@ export const aboutData: About = {
       href: '/assets/resume.pdf',
       text: 'Download CV',
       primary: true,
+      // @ts-expect-error heroicons ForwardRef component works at runtime
       Icon: DownloadIcon,
     },
     {
@@ -68,24 +66,6 @@ export const aboutData: About = {
       text: 'Get in touch',
       primary: false,
     },
-  ],
-};
-
-/**
- * Principles section
- */
-export const principlesData: Principles = {
-  description: `Following the Programmers Oath by Robert C. Martin - In order to defend and preserve the honor of the profession of computer programmers, I promise that, to the best of my ability and judgement:`,
-  principlesItems: [
-    {text: 'I will not produce harmful code.'},
-    {text: 'The code that I produce will always be my best work. I will not knowingly allow code that is defective either in behavior or structure to accumulate.'},
-    {text: 'I will produce, with each release, a quick, sure, and repeatable proof that every element of the code works as it should.'},
-    {text: 'I will make frequent, small, releases so that I do not impede the progress of others.'},
-    {text: 'I will fearlessly and relentlessly improve my creations at every opportunity. I will never degrade them.'},
-    {text: 'I will do all that I can to keep the productivity of myself, and others, as high as possible. I will do nothing that decreases that productivity.'},
-    {text: 'I will continuously ensure that others can cover for me, and that I can cover for them.'},
-    {text: 'I will produce estimates that are honest both in magnitude and precision. I will not make promises without certainty.'},
-    {text: 'I will never stop learning and improving my craft.'},
   ],
 };
 
