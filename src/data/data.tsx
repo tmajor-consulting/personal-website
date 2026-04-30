@@ -73,41 +73,39 @@ export const aboutData: About = {
  */
 export const skills: SkillGroup[] = [
   {
-    name: 'Technical Skills',
+    name: 'Engineering Leadership',
     skills: [
-      {name: 'Software Architecture', level: 10},
-      {name: 'Event-Driven & Microservices', level: 10},
-      {name: 'TypeScript / Node.js / NestJS', level: 9},
-      {name: 'TDD & E2E Testing', level: 8},
-      {name: 'Agentic AI Workflows & AI-Augmented Engineering', level: 8},
+      {name: 'Org Design'}, {name: 'Engineering Culture'}, {name: 'Servant Leadership'},
+      {name: 'Team Building'}, {name: 'Conflict Resolution'}, {name: 'Mentoring & Coaching'},
+      {name: 'Career Development'}, {name: 'Hiring & Onboarding'},
+      {name: 'Cross-functional Collaboration'}, {name: 'Stakeholder Communication'},
+      {name: 'Technology Vision & Roadmapping'}, {name: 'Agile Methodologies'},
+      {name: 'OKRs'}, {name: 'DORA Metrics'}, {name: 'Technical Governance'},
     ],
   },
   {
-    name: 'Leadership Skills',
+    name: 'Architecture & Technology',
     skills: [
-      {name: 'People & Team Leadership', level: 10},
-      {name: 'Agile Methodologies & OKRs', level: 10},
-      {name: 'Coaching & Mentoring', level: 9},
-      {name: 'Hiring & Onboarding', level: 9},
-      {name: 'Stakeholder Communication', level: 10},
+      {name: 'Scalable Microservices'}, {name: 'Event-Driven Systems'},
+      {name: 'Hexagonal Architecture'}, {name: 'Domain-Driven Design (DDD)'},
+      {name: 'Self-Contained Systems'}, {name: 'Anti-Corruption Layer (ACL)'},
+      {name: 'Micro-frontends'}, {name: 'Architecture Decision Records'},
+      {name: 'C4 Documentation'},
     ],
   },
   {
-    name: 'Business Skills',
+    name: 'Tools & Platforms',
     skills: [
-      {name: 'Technology Vision & Roadmapping', level: 9},
-      {name: 'Data-Driven Decision Making', level: 9},
-      {name: 'Risk & Trade-off Management', level: 9},
-      {name: 'Cost Optimisation', level: 8},
+      {name: 'TypeScript'}, {name: 'Node.js'}, {name: 'NestJS'}, {name: 'React'},
+      {name: 'PostgreSQL'}, {name: 'Kafka'}, {name: 'AWS'}, {name: 'Docker'},
+      {name: 'Kubernetes'}, {name: 'CI/CD'}, {name: 'Datadog'}, {name: 'Algolia'},
     ],
   },
   {
-    name: 'Spoken Languages',
+    name: 'Languages',
     skills: [
-      {name: 'English', level: 10},
-      {name: 'Hungarian', level: 10},
-      {name: 'Serbian', level: 10},
-      {name: 'German', level: 8},
+      {name: 'English (Native)'}, {name: 'Hungarian (Native)'},
+      {name: 'Serbian (Native)'}, {name: 'German (C1/B2)'},
     ],
   },
 ];
