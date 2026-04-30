@@ -23,5 +23,15 @@ describe('Highlights', () => {
     render(<Highlights />);
     expect(screen.getByText('Years in Engineering')).toBeInTheDocument();
     expect(screen.getByText('Engineer Organisation')).toBeInTheDocument();
+    expect(screen.getByText('Seniority Promotions')).toBeInTheDocument();
+    expect(screen.getByText('CVs Reviewed')).toBeInTheDocument();
+  });
+
+  it('renders stat sub-text', () => {
+    render(<Highlights />);
+    expect(screen.getByText('incl. 5+ in leadership')).toBeInTheDocument();
+    expect(screen.getByText('tech board member')).toBeInTheDocument();
+    expect(screen.getByText('driven through coaching')).toBeInTheDocument();
+    expect(screen.getByText('8 hires across 2 teams')).toBeInTheDocument();
   });
 });
