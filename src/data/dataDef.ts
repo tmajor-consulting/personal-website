@@ -1,4 +1,4 @@
-import React, {FC, PropsWithChildren, ReactElement, SVGProps} from 'react';
+import React, {FC, PropsWithChildren, SVGProps, ReactElement} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
 
@@ -22,7 +22,7 @@ export type HomepageMeta = PropsWithChildren<{
 export interface About {
   imageSrc: string;
   name: string;
-  description: ReactElement;
+  description: string;
   actions: AboutActionItem[];
 }
 

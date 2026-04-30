@@ -3,6 +3,7 @@ import Head from 'next/head';
 import {useRouter} from 'next/router';
 import {memo} from 'react';
 
+import {personJsonLd} from '../../data/data';
 import {HomepageMeta} from '../../data/dataDef';
 
 const Page: NextPage<HomepageMeta> = memo(({children, title, description}) => {
@@ -19,7 +20,6 @@ const Page: NextPage<HomepageMeta> = memo(({children, title, description}) => {
 
         <link href="/favicon.ico" rel="icon" sizes="any" />
         <link href="/icon.svg" rel="icon" type="image/svg+xml" />
-        <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
         <link href="/site.webmanifest" rel="manifest" />
 
         {/* Open Graph : https://ogp.me/ */}
@@ -27,13 +27,17 @@ const Page: NextPage<HomepageMeta> = memo(({children, title, description}) => {
         <meta content="website" property="og:type" />
         <meta content={description} property="og:description" />
         <meta content={`https://www.tmajor.me${pathname}`} property="og:url" />
-        <meta content="/og-image.png" property="og:image" />
 
         {/* Twitter: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
-        <meta content="summary_large_image" name="twitter:card" />
-        <meta content="/og-image.png" name="twitter:image" />
+        <meta content="summary" name="twitter:card" />
         <meta content={title} name="twitter:title" />
         <meta content={description} name="twitter:description" />
+
+        {/* Structured data */}
+        <script
+          dangerouslySetInnerHTML={{__html: JSON.stringify(personJsonLd)}}
+          type="application/ld+json"
+        />
       </Head>
       {children}
     </>

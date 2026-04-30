@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
@@ -19,6 +19,11 @@
 
 @keyframes blink {
   0% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* touch breakpoint: coarse pointer devices (replaces v3 raw media query) */
@@ -54,12 +59,73 @@ html {
   height: 100vh;
 }
 
+:root {
+  --bg: oklch(97.5% 0.006 55);
+  --surface: #ffffff;
+  --border: oklch(90% 0.006 60);
+  --text: oklch(14% 0.01 250);
+  --muted: oklch(50% 0.008 250);
+  --dark: oklch(16% 0.018 255);
+  --dark2: oklch(12% 0.015 255);
+  --amber: oklch(60% 0.17 52);
+  --amber-light: oklch(94% 0.06 55);
+  --nav-h: 60px;
+}
+
 body {
   position: relative;
   width: 100%;
-  color: #444444;
+  color: var(--text);
   font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif;
-  background-color: #fafafa;
+  background-color: var(--bg);
+}
+
+/* Timeline experience bullet styling */
+.timeline-content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline-content li {
+  font-size: 15px;
+  color: oklch(35% 0.01 250);
+  line-height: 1.65;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.timeline-content li::before {
+  content: '→';
+  color: var(--amber);
+  flex-shrink: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+/* Section eyebrow label with trailing line */
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
 td,

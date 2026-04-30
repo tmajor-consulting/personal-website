@@ -1,114 +1,150 @@
-import {ChevronDownIcon} from '@heroicons/react/24/outline';
-import classNames from 'classnames';
-import {FC, memo, useEffect, useRef, useState} from 'react';
+import {FC, memo, useEffect, useRef} from 'react';
 
-import {aboutData, SectionId} from '../../data/data';
+import {aboutData, SectionId, socialLinks} from '../../data/data';
 import Section from '../Layout/Section';
-import Socials from '../Socials';
-
-const titles = ['Engineering Manager', 'Software Craftsman'];
-const TYPING_MS = 75;
-const ERASING_MS = 40;
-const PAUSE_AFTER_TYPING_MS = 1800;
-const PAUSE_AFTER_ERASING_MS = 400;
 
 const About: FC = memo(() => {
   const {imageSrc, name, description, actions} = aboutData;
-  const [displayed, setDisplayed] = useState('');
-  const [titleIndex, setTitleIndex] = useState(0);
-  const [phase, setPhase] = useState<'typing' | 'pausing' | 'erasing'>('typing');
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Lock to window.innerHeight on mount to prevent iOS Safari's visual scale
-    // when the browser chrome (address bar) hides on scroll. Viewport units
-    // (svh/dvh/vh) all trigger a compositor-level zoom on iOS; a fixed px value does not.
+    // when the browser chrome hides on scroll.
     if (containerRef.current) {
       containerRef.current.style.minHeight = `${window.innerHeight}px`;
     }
   }, []);
 
-  useEffect(() => {
-    const title = titles[titleIndex];
-    if (phase === 'typing') {
-      if (displayed.length < title.length) {
-        const t = setTimeout(() => setDisplayed(title.slice(0, displayed.length + 1)), TYPING_MS);
-        return () => clearTimeout(t);
-      }
-      const t = setTimeout(() => setPhase('erasing'), PAUSE_AFTER_TYPING_MS);
-      return () => clearTimeout(t);
-    }
-    if (phase === 'erasing') {
-      if (displayed.length > 0) {
-        const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), ERASING_MS);
-        return () => clearTimeout(t);
-      }
-      const t = setTimeout(() => {
-        setTitleIndex(i => (i + 1) % titles.length);
-        setPhase('typing');
-      }, PAUSE_AFTER_ERASING_MS);
-      return () => clearTimeout(t);
-    }
-    return undefined;
-  }, [displayed, phase, titleIndex]);
-
   return (
     <Section noPadding sectionId={SectionId.About}>
       <div
         ref={containerRef}
-        className="relative flex min-h-svh w-screen items-center justify-center pt-20 pb-10 sm:pt-0 sm:pb-0"
-        style={{
-          backgroundImage: `url(${(imageSrc as unknown as {src: string}).src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}>
-        <div className="z-10 max-w-screen-lg px-4 lg:px-0">
-          <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/10 p-6 text-center shadow-lg backdrop-blur-md">
-            <h1 className="font-serif text-4xl font-bold text-white sm:text-5xl lg:text-7xl">{name}</h1>
-            <p className="min-h-[1.75rem] border-r-2 border-yellow-500 font-mono text-lg text-yellow-400 animate-blink sm:min-h-[2rem] sm:text-xl">
-              {displayed}
-            </p>
-            {description}
-            <div className="flex flex-wrap gap-2 mt-3">
-              <span
-                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
-                style={{background: 'rgba(74,222,128,0.15)', borderColor: 'rgba(74,222,128,0.35)', color: 'rgb(134,239,172)'}}>
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Open to EM roles
-              </span>
-              <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-white/20 text-white/70">
-                Munich / Remote
-              </span>
-              <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-white/20 text-white/70">
-                10+ yrs experience
-              </span>
+        className="relative flex items-center overflow-hidden"
+        style={{background: 'var(--dark)', paddingTop: 'var(--nav-h)'}}>
+        {/* Gradient overlay */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 50% at 70% 50%, oklch(25% 0.04 255 / 0.6) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 10% 80%, oklch(20% 0.06 280 / 0.4) 0%, transparent 60%)',
+          }}
+        />
+
+        <div className="relative mx-auto w-full max-w-6xl px-8 py-20 sm:px-12">
+          <div className="flex flex-col-reverse items-start gap-10 sm:grid sm:items-center sm:gap-16" style={{gridTemplateColumns: '1fr 160px'}}>
+            {/* Left: text */}
+            <div>
+              <p
+                className="mb-4 font-mono text-[11px] uppercase tracking-[0.16em]"
+                style={{color: 'rgba(255,255,255,0.4)'}}>
+                Engineering Manager · Munich, Germany
+              </p>
+              <h1
+                className="mb-5 font-serif font-semibold leading-[1.05] tracking-tight text-white"
+                style={{fontSize: 'clamp(40px, 5vw, 64px)'}}>
+                {name.split(' ').slice(0, 1).join(' ')}
+                <br />
+                {name.split(' ').slice(1).join(' ')}
+              </h1>
+              <p
+                className="mb-6 text-[17px] leading-[1.7]"
+                style={{color: 'rgba(255,255,255,0.62)'}}>
+                {description}
+              </p>
+
+              {/* Availability badges */}
+              <div className="mb-8 flex flex-wrap gap-2">
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium"
+                  style={{
+                    background: 'rgba(74,222,128,0.12)',
+                    border: '1px solid rgba(74,222,128,0.3)',
+                    color: 'rgb(134,239,172)',
+                  }}>
+                  <span
+                    className="inline-block h-1.5 w-1.5 animate-pulse rounded-full"
+                    style={{background: 'var(--green, oklch(55% 0.16 155))'}}
+                  />
+                  Open to EM roles
+                </span>
+                <span
+                  className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium"
+                  style={{
+                    background: 'rgba(74,222,128,0.12)',
+                    border: '1px solid rgba(74,222,128,0.3)',
+                    color: 'rgb(134,239,172)',
+                  }}>
+                  <span
+                    className="inline-block h-1.5 w-1.5 animate-pulse rounded-full"
+                    style={{background: 'var(--green, oklch(55% 0.16 155))'}}
+                  />
+                  Open to Head of Engineering roles
+                </span>
+                <span
+                  className="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium"
+                  style={{border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.65)'}}>
+                  Munich / Remote
+                </span>
+                <span
+                  className="inline-flex items-center rounded-full px-3 py-1.5 text-xs font-medium"
+                  style={{border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.65)'}}>
+                  10+ yrs experience
+                </span>
+              </div>
+
+              {/* CTAs */}
+              <div className="mb-7 flex flex-wrap gap-3">
+                {actions.map(({href, text, primary, Icon}) =>
+                  primary ? (
+                    <a
+                      className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-stone-100"
+                      href={href}
+                      key={text}
+                      style={{color: 'var(--dark)'}}>
+                      {Icon && <Icon className="h-3.5 w-3.5" />}
+                      {text}
+                    </a>
+                  ) : (
+                    <a
+                      className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors"
+                      href={href}
+                      key={text}
+                      style={{
+                        background: 'transparent',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                        color: 'rgba(255,255,255,0.7)',
+                      }}>
+                      {text}
+                    </a>
+                  ),
+                )}
+              </div>
+
+              {/* Social links */}
+              <div className="flex gap-3.5">
+                {socialLinks.map(({label, href}) => (
+                  <a
+                    className="font-mono text-xs tracking-[0.04em] transition-colors"
+                    href={href}
+                    key={label}
+                    rel="noopener noreferrer"
+                    style={{color: 'rgba(255,255,255,0.3)'}}
+                    target="_blank">
+                    {label}
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className="flex gap-x-4 text-neutral-100">
-              <Socials />
-            </div>
-            <div className="flex w-full justify-center gap-x-4">
-              {actions.map(({href, text, primary, Icon}) => (
-                <a
-                  className={classNames(
-                    'flex gap-x-2 rounded-full border-2 bg-none py-2 px-4 text-sm font-medium text-white ring-offset-yellow-600/50 hover:bg-yellow-600/50 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
-                    primary ? 'border-yellow-600 ring-yellow-600' : 'border-white ring-white',
-                  )}
-                  href={href}
-                  key={text}>
-                  {text}
-                  {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
-                </a>
-              ))}
+
+            {/* Right: circular profile photo */}
+            <div
+              className="h-36 w-36 flex-shrink-0 overflow-hidden rounded-full sm:h-[160px] sm:w-[160px] sm:justify-self-end"
+              style={{border: '3px solid rgba(255,255,255,0.1)'}}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img alt={name} className="h-full w-full object-cover" src={imageSrc} />
             </div>
           </div>
-        </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
-          <a
-            aria-label="Scroll down"
-            className="rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-            href={`/#${SectionId.Highlights}`}>
-            <ChevronDownIcon className="h-6 w-6 animate-bounce" />
-          </a>
         </div>
       </div>
     </Section>

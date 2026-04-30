@@ -1,5 +1,5 @@
 import {Dialog, DialogBackdrop, Transition} from '@headlessui/react';
-import {Bars3BottomRightIcon} from '@heroicons/react/24/outline';
+import {Bars3BottomRightIcon, XMarkIcon} from '@heroicons/react/24/outline';
 import classNames from 'classnames';
 import Link from 'next/link';
 import {FC, Fragment, memo, useCallback, useMemo, useState} from 'react';
@@ -32,22 +32,28 @@ const Header: FC = memo(() => {
 
 const DesktopNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}> = memo(
   ({navSections, currentSection}) => {
-    const baseClass =
-      '-m-1.5 p-1.5 rounded-md font-bold first-letter:uppercase hover:transition-colors hover:duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-600 sm:hover:text-yellow-600 text-neutral-100';
-    const activeClass = classNames(baseClass, 'text-yellow-600');
-    const inactiveClass = classNames(baseClass, 'text-neutral-100');
     return (
-      <header className="fixed top-0 z-50 hidden w-full bg-neutral-900/50 p-4 backdrop-blur sm:block" id={headerID}>
-        <nav className="flex justify-center gap-x-8">
-          {navSections.map(section => (
-            <NavItem
-              activeClass={activeClass}
-              current={section === currentSection}
-              inactiveClass={inactiveClass}
-              key={section}
-              section={section}
-            />
-          ))}
+      <header
+        className="fixed top-0 z-50 hidden w-full sm:block"
+        id={headerID}
+        style={{
+          background: 'var(--dark)',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
+          height: 'var(--nav-h)',
+        }}>
+        <nav className="mx-auto flex h-full max-w-6xl items-center justify-between px-8 sm:px-12">
+          <Link
+            className="font-serif text-lg tracking-[-0.01em] text-white"
+            href="/#about">
+            Tamas Flucsa Major
+          </Link>
+          <ul className="flex list-none gap-8">
+            {navSections.map(section => (
+              <li key={section}>
+                <NavItem current={section === currentSection} section={section} />
+              </li>
+            ))}
+          </ul>
         </nav>
       </header>
     );
@@ -59,22 +65,28 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const toggleOpen = useCallback(() => {
-      setIsOpen(!isOpen);
-    }, [isOpen]);
+      setIsOpen(prev => !prev);
+    }, []);
 
-    const baseClass =
-      'p-2 rounded-md first-letter:uppercase transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-600';
-    const activeClass = classNames(baseClass, 'bg-neutral-900 text-white font-bold');
-    const inactiveClass = classNames(baseClass, 'text-neutral-200 font-medium');
     return (
       <>
-        <header className="fixed top-0 z-50 w-full sm:hidden">
-          <div className="flex h-14 items-center justify-end bg-neutral-900/75 px-3 backdrop-blur-sm">
+        <header
+          className="fixed top-0 z-50 w-full sm:hidden"
+          style={{
+            background: 'var(--dark)',
+            borderBottom: '1px solid rgba(255,255,255,0.07)',
+            height: 'var(--nav-h)',
+          }}>
+          <div className="flex h-full items-center justify-between px-5">
+            <Link className="font-serif text-base tracking-[-0.01em] text-white" href="/#about">
+              Tamas Flucsa Major
+            </Link>
             <button
               aria-label="Menu Button"
-              className="rounded-md bg-yellow-600 p-2 ring-offset-gray-800/60 hover:bg-yellow-500 focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-yellow-600 focus-visible:ring-offset-2"
-              onClick={toggleOpen}>
-              <Bars3BottomRightIcon className="h-6 w-6 text-white" />
+              className="rounded-md p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              onClick={toggleOpen}
+              style={{color: 'rgba(255,255,255,0.6)'}}>
+              <Bars3BottomRightIcon className="h-5 w-5" />
               <span className="sr-only">Open sidebar</span>
             </button>
           </div>
@@ -89,7 +101,7 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leave="transition-opacity ease-linear duration-300"
               leaveFrom="opacity-100"
               leaveTo="opacity-0">
-              <DialogBackdrop className="fixed inset-0 bg-stone-900 bg-opacity-75" />
+              <DialogBackdrop className="fixed inset-0" style={{background: 'rgba(0,0,0,0.7)'}} />
             </Transition.Child>
             <Transition.Child
               as={Fragment}
@@ -99,14 +111,23 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
               leave="transition ease-in-out duration-300 transform"
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full">
-              <div className="relative w-4/5 bg-stone-800">
-                <nav className="mt-16 flex flex-col gap-y-2 px-2">
+              <div className="relative w-4/5" style={{background: 'var(--dark2)'}}>
+                <div className="flex h-[60px] items-center justify-between px-5">
+                  <span className="font-serif text-base text-white">T. Flucsa Major</span>
+                  <button
+                    aria-label="Close menu"
+                    className="p-2 focus:outline-none"
+                    onClick={toggleOpen}
+                    style={{color: 'rgba(255,255,255,0.5)'}}>
+                    <XMarkIcon className="h-5 w-5" />
+                  </button>
+                </div>
+                <nav className="flex flex-col gap-1 px-3 pt-2">
                   {navSections.map(section => (
                     <NavItem
-                      activeClass={activeClass}
                       current={section === currentSection}
-                      inactiveClass={inactiveClass}
                       key={section}
+                      mobile
                       onClick={toggleOpen}
                       section={section}
                     />
@@ -124,13 +145,31 @@ const MobileNav: FC<{navSections: SectionId[]; currentSection: SectionId | null}
 const NavItem: FC<{
   section: string;
   current: boolean;
-  activeClass: string;
-  inactiveClass: string;
+  mobile?: boolean;
   onClick?: () => void;
-}> = memo(({section, current, inactiveClass, activeClass, onClick}) => {
+}> = memo(({section, current, mobile = false, onClick}) => {
+  const label = section.charAt(0).toUpperCase() + section.slice(1);
+  if (mobile) {
+    return (
+      <Link
+        className={classNames(
+          'block rounded-md px-3 py-2.5 font-mono text-sm tracking-[0.04em] transition-colors',
+          current ? 'text-white' : 'text-white/50 hover:text-white/80',
+        )}
+        href={`/#${section}`}
+        onClick={onClick}>
+        {label}
+      </Link>
+    );
+  }
   return (
-    <Link className={classNames(current ? activeClass : inactiveClass)} href={`/#${section}`} key={section} onClick={onClick}>
-      {section}
+    <Link
+      className={classNames(
+        'font-mono text-[13px] tracking-[0.04em] transition-colors duration-200',
+        current ? 'text-white/90' : 'text-white/55 hover:text-white/90',
+      )}
+      href={`/#${section}`}>
+      {label}
     </Link>
   );
 });

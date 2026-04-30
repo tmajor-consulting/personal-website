@@ -3,24 +3,37 @@ import {FC, memo} from 'react';
 import type {TimelineItem} from '../../../data/dataDef';
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
-  const {title, startDate, endDate, location, content, company, companyDescriptor} = item;
-
+  const {title, startDate, endDate, company, companyDescriptor, content} = item;
 
   return (
-    <div className="flex flex-col pb-8 text-neutral-300 last:pb-0">
-      <div className="flex flex-col border-l-2 border-yellow-600 pl-4 pb-4">
-        <h2 className="text-xl font-bold text-white">{title}</h2>
-        <div className="text-base font-semibold text-yellow-500">{company}</div>
+    <div
+      className="grid gap-8 py-10 last:border-b-0"
+      style={{
+        gridTemplateColumns: '200px 1fr',
+        borderBottom: '1px solid var(--border)',
+      }}>
+      {/* Left: date + company */}
+      <div className="flex flex-col gap-1 pt-0.5">
+        <span className="font-mono text-[11px] tracking-[0.04em]" style={{color: 'var(--muted)'}}>
+          {startDate} — {endDate ?? 'Present'}
+        </span>
+        <span className="mt-1.5 text-sm font-semibold" style={{color: 'var(--text)'}}>
+          {company}
+        </span>
         {companyDescriptor && (
-          <div className="text-xs text-neutral-500">{companyDescriptor}</div>
+          <span className="text-[11px] leading-[1.5]" style={{color: 'var(--muted)'}}>
+            {companyDescriptor}
+          </span>
         )}
-        <div className="mt-1 flex flex-wrap items-center gap-x-2">
-          <span className="text-sm italic text-neutral-500">{location}</span>
-          <span className="text-neutral-600">•</span>
-          <span className="text-sm text-neutral-500">{startDate} – {endDate ?? 'Present'}</span>
-        </div>
       </div>
-      {content}
+
+      {/* Right: role + bullets */}
+      <div>
+        <h3 className="mb-3.5 text-lg font-semibold tracking-[-0.01em]" style={{color: 'var(--text)'}}>
+          {title}
+        </h3>
+        <div className="timeline-content">{content}</div>
+      </div>
     </div>
   );
 });

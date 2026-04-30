@@ -3,8 +3,6 @@ import {ArrowDownTrayIcon as DownloadIcon} from '@heroicons/react/24/outline';
 import GithubIcon from '../components/Icon/GithubIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 
-// @ts-ignore
-import heroImage from '../images/header-background2.webp';
 import profilepic from '../images/profilepic.png';
 
 import {
@@ -16,6 +14,9 @@ import {
   TimelineItem,
   About,
 } from './dataDef';
+
+// profilepic is a StaticImageData object; .src is the URL string
+const profilepicSrc = (profilepic as unknown as {src: string}).src;
 
 /**
  * Page meta data
@@ -43,15 +44,14 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  * About section
  */
 export const aboutData: About = {
-  imageSrc: heroImage,
+  imageSrc: profilepicSrc,
   name: `Tamas Flucsa Major`,
-  description: (
-    <>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I build engineering cultures where teams are product partners — not feature factories. With 10+ years in software and 5+ in leadership, I specialise in empowering teams to challenge assumptions early, own outcomes fully, and ship software they're proud of.
-      </p>
-    </>
-  ),
+  description: `Engineering leader with 10+ years of experience, including 5+ in technical leadership roles. I specialize in building
+engineering cultures where teams are product partners - not feature factories. I've driven organizational change at the
+structural level, including championing the introduction of the Engineering Manager role and shifting engineering from
+pure delivery toward shared product ownership. I believe great software is built by empowered teams who understand
+the why behind what they build, challenge assumptions early, and take responsibility all the way through to measured
+outcomes. I'm looking to bring this approach to a larger scale and keep building engineering organizations I'm proud of.`,
   actions: [
     {
       href: '/assets/resume.pdf',
@@ -98,6 +98,7 @@ export const skills: SkillGroup[] = [
       {name: 'TypeScript'}, {name: 'Node.js'}, {name: 'NestJS'}, {name: 'React'},
       {name: 'PostgreSQL'}, {name: 'Kafka'}, {name: 'AWS'}, {name: 'Docker'},
       {name: 'Kubernetes'}, {name: 'CI/CD'}, {name: 'Datadog'}, {name: 'Algolia'},
+      {name: 'AI-Augmented Development'},
     ],
   },
   {
@@ -122,7 +123,7 @@ export const experience: TimelineItem[] = [
     location: 'Munich, Germany',
     title: 'Engineering Manager',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-2">
+      <ul>
         <li>Identified the need for an Engineering Manager function and drove internal advocacy for its introduction - working closely with the Head of Engineering to build the case against budget and organizational resistance. The change shifted engineering toward shared product ownership, with teams involved from idea challenge through delivery and outcome measurement.</li>
         <li>Advocated for an inclusive team restructuring process, ensuring engineer input and interpersonal dynamics were considered alongside technical skills - collaborating with Scrum Masters to find team compositions that work well together, not just on paper.</li>
         <li>Navigated sustained interpersonal conflict between a Principal Engineer and a Senior Engineer through repeated 1-on-1 coaching - helping each understand their own role in the dynamic and grow professionally from it, without taking sides.</li>
@@ -142,7 +143,7 @@ export const experience: TimelineItem[] = [
     location: 'Munich, Germany',
     title: 'Principal Engineer',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-2">
+      <ul>
         <li>Championed the architecture of a multi-tenant, event-driven microservices platform on AWS - driving key design decisions including strict event-driven and self-contained system boundaries, and the introduction of an Anti-Corruption Layer for SAP integration - advocating for long-term system integrity over short-term delivery shortcuts.</li>
         <li>Defined and drove adoption of engineering standards across teams - covering testing guidelines (unit, component, integration, and E2E), Definition of Ready/Done, and deployment practices - bringing teams along through collaboration while enforcing non-negotiables where necessary.</li>
         <li>Played a central role in recruitment across multiple roles - from junior engineers to architects and Scrum Masters - reviewing 200+ CVs and conducting 30+ technical interviews, resulting in 5 hires. Maintained hiring bar even when it meant closing searches without a hire.</li>
@@ -159,7 +160,7 @@ export const experience: TimelineItem[] = [
     location: 'Munich, Germany',
     title: 'Full Stack Software Engineer',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-2">
+      <ul>
         <li>Developed and shipped features across the stack in close collaboration with Product Owners and Architects, contributing to the early foundation of the platform.</li>
         <li>Helped introduce and implement the company's E2E testing framework, which became a core part of the quality assurance process across teams.</li>
         <li>Served as team representative in the Nexus Scrum model - coordinating across teams, unblocking engineers, and bridging communication between technical and non-technical stakeholders.</li>
@@ -174,7 +175,7 @@ export const experience: TimelineItem[] = [
     location: 'Hannover, Germany',
     title: '(Senior) Software Engineer',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-2">
+      <ul>
         <li>Developed web-based applications in an agile environment, working closely with customers to refine requirements and deliver high-quality solutions.</li>
         <li>Maintained and extended legacy code for long-running projects and built new applications from scratch.</li>
         <li>Acted as a key communication bridge between customers and developers, ensuring requirements were clear and technical solutions met expectations.</li>
@@ -207,9 +208,42 @@ export const contact: ContactSection = {
 };
 
 /**
+ * Structured data (JSON-LD)
+ */
+export const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Tamas Flucsa Major',
+  jobTitle: 'Engineering Manager',
+  url: 'https://www.tmajor.me',
+  email: 'tamas.fm@proton.me',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Munich',
+    addressCountry: 'DE',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/tam%C3%A1s-flucsa-major-985a5196',
+    'https://github.com/tmajor-consulting',
+  ],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Jochen Schweizer mydays Group',
+  },
+  knowsAbout: [
+    'Engineering Management', 'Org Design', 'Engineering Culture',
+    'Servant Leadership', 'Team Building', 'Conflict Resolution',
+    'Mentoring & Coaching', 'Career Development', 'Hiring & Onboarding',
+    'OKRs', 'DORA Metrics', 'Agile',
+    'Scalable Microservices', 'Event-Driven Systems', 'Hexagonal Architecture',
+    'Domain-Driven Design', 'AWS', 'TypeScript', 'Node.js', 'React',
+  ],
+} as const;
+
+/**
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'GitHub', Icon: GithubIcon, href: 'https://github.com/tmajor-consulting'},
+  {label: 'GitHub', Icon: GithubIcon, href: 'https://github.com/tamas-fm'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/tam%C3%A1s-flucsa-major-985a5196'},
 ];

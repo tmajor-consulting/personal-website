@@ -1,0 +1,42 @@
+# Tamas Flucsa Major
+
+> Engineering Manager based in Munich, Germany. Open to EM and Head of Engineering roles. Available for select consulting engagements.
+
+Tamas Flucsa Major is a software engineering leader with 10+ years of experience, including 5+ years in technical leadership. He specialises in building engineering cultures where teams act as product partners rather than feature factories. He has driven structural organisational change, including championing the introduction of the Engineering Manager role at scale.
+
+## Current Role
+
+Engineering Manager at Jochen Schweizer mydays Group (Jul 2023 – Present), Munich.
+Member of the company's technology board, overseeing a 60+ engineer organisation across 8 teams.
+
+## Previous Roles
+
+- Principal Engineer, Jochen Schweizer mydays Group (Mar 2021 – Jun 2023)
+- Full Stack Software Engineer, Jochen Schweizer mydays Group (Jul 2019 – Feb 2021)
+- Senior Software Engineer, tecRacer GmbH & Co. KG (Mar 2015 – Jun 2019)
+
+## Key Skills
+
+Engineering Leadership: Org Design, Engineering Culture, Servant Leadership, Team Building, Conflict Resolution, Mentoring & Coaching, Career Development, Hiring & Onboarding, OKRs, DORA Metrics, Agile.
+
+Architecture & Technology: Scalable Microservices, Event-Driven Systems, Hexagonal Architecture, Domain-Driven Design, Self-Contained Systems, Anti-Corruption Layer, Micro-frontends.
+
+Tools & Platforms: TypeScript, Node.js, NestJS, React, PostgreSQL, Kafka, AWS, Docker, Kubernetes, CI/CD, Datadog, Algolia.
+
+Languages: English (Native), Hungarian (Native), Serbian (Native), German (C1/B2).
+
+## Consulting Services
+
+TMajor Consulting offers fractional engineering leadership for growing tech teams:
+- Fractional Engineering Manager
+- Architecture Review
+- Engineering Standards definition and rollout
+- Team Building & Hiring support
+
+## Contact
+
+- Email: tamas.fm@proton.me
+- LinkedIn: https://www.linkedin.com/in/tamás-flucsa-major-985a5196
+- GitHub: https://github.com/tmajor-consulting
+- Location: Munich, Germany
+- Website: https://www.tmajor.me

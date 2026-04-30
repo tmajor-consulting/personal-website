@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import {memo} from 'react';
 import Section from '../Layout/Section';
 import {SectionId} from '../../data/data';
 
@@ -10,14 +10,33 @@ const stats = [
 ];
 
 const Highlights = memo(() => (
-  <Section className="bg-white" sectionId={SectionId.Highlights}>
-    <div className="mx-auto max-w-5xl px-4 py-12">
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-        {stats.map(({value, label, sub}) => (
-          <div key={label} className="flex flex-col gap-1">
-            <span className="text-4xl font-semibold tracking-tight text-stone-900">{value}</span>
-            <span className="text-sm font-medium text-stone-700">{label}</span>
-            <span className="text-xs text-stone-400">{sub}</span>
+  <Section noPadding sectionId={SectionId.Highlights}>
+    <div
+      className="w-full"
+      style={{
+        background: 'var(--surface)',
+        borderTop: '1px solid var(--border)',
+        borderBottom: '1px solid var(--border)',
+      }}>
+      <div className="grid grid-cols-2 sm:grid-cols-4">
+        {stats.map(({value, label, sub}, i) => (
+          <div
+            key={label}
+            className="flex flex-col gap-2 px-8 py-10 sm:px-8"
+            style={{
+              borderRight: i < stats.length - 1 ? '1px solid var(--border)' : undefined,
+            }}>
+            <span
+              className="font-serif font-semibold leading-none tracking-[-0.04em]"
+              style={{fontSize: '52px', color: 'var(--text)'}}>
+              {value}
+            </span>
+            <span className="text-sm font-medium" style={{color: 'var(--text)'}}>
+              {label}
+            </span>
+            <span className="font-mono text-xs" style={{color: 'var(--muted)'}}>
+              {sub}
+            </span>
           </div>
         ))}
       </div>

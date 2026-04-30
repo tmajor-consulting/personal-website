@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import {memo} from 'react';
 import Section from '../Layout/Section';
 import {SectionId} from '../../data/data';
 
@@ -22,35 +22,37 @@ const services = [
 ];
 
 const Consulting = memo(() => (
-  <Section className="bg-stone-900" sectionId={SectionId.Consulting}>
-    <div className="mx-auto max-w-5xl px-4 py-16 sm:py-20">
-      <div className="mb-12">
-        <p className="mb-3 font-mono text-xs uppercase tracking-widest text-stone-400">TMajor Consulting</p>
-        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          Fractional engineering leadership<br className="hidden sm:block" /> for growing tech teams.
-        </h2>
-        <p className="mt-4 max-w-xl text-base text-stone-400">
-          Whether you need an interim Engineering Manager, an architecture review, or help building hiring and engineering standards — I bring the same craft and rigour I've applied building platforms at scale.
-        </p>
-        <p className="mt-3 text-sm text-stone-500">Currently available for select engagements.</p>
-      </div>
+  <Section className="bg-[var(--dark2)]" sectionId={SectionId.Consulting}>
+    <div className="mb-12">
+      <p
+        className="mb-3.5 font-mono text-[10px] uppercase tracking-[0.16em]"
+        style={{color: 'rgba(255,255,255,0.3)'}}>
+        TMajor Consulting
+      </p>
+      <h2
+        className="mb-4 max-w-[560px] font-serif text-3xl font-semibold leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl">
+        Fractional engineering leadership<br className="hidden sm:block" /> for growing tech teams.
+      </h2>
+      <p className="mb-2.5 max-w-[520px] text-[15px] leading-[1.7]" style={{color: 'rgba(255,255,255,0.5)'}}>
+        Whether you need an interim Engineering Manager, an architecture review, or help building hiring and
+        engineering standards — I bring the same craft and rigour I've applied building platforms at scale.
+      </p>
+      <p className="font-mono text-[13px]" style={{color: 'rgba(255,255,255,0.3)'}}>
+        Currently available for select engagements.
+      </p>
+    </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        {services.map(({title, desc}) => (
-          <div key={title} className="rounded-xl border border-white/10 bg-white/5 p-6">
-            <h3 className="mb-2 text-sm font-semibold text-white">{title}</h3>
-            <p className="text-sm leading-relaxed text-stone-400">{desc}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-10">
-        <a
-          className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-stone-900 hover:bg-stone-100 transition-colors"
-          href={`#${SectionId.Contact}`}>
-          Get in touch →
-        </a>
-      </div>
+    <div className="mb-10 grid gap-3 sm:grid-cols-2">
+      {services.map(({title, desc}) => (
+        <div
+          key={title}
+          className="rounded-[10px] border border-white/[0.08] bg-white/[0.04] p-6 transition-colors duration-200 hover:border-white/[0.14] hover:bg-white/[0.07]">
+          <h3 className="mb-2 text-sm font-semibold text-white">{title}</h3>
+          <p className="text-[14px] leading-[1.65]" style={{color: 'rgba(255,255,255,0.45)'}}>
+            {desc}
+          </p>
+        </div>
+      ))}
     </div>
   </Section>
 ));
