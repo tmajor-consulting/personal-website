@@ -121,16 +121,19 @@ export const experience: TimelineItem[] = [
     startDate: 'Jul. 2023',
     endDate: 'Present',
     company: 'Jochen Schweizer mydays Group',
+    companyDescriptor: 'Experience & Gift E-commerce · ~400 people · Munich',
     location: 'Munich, Germany',
     title: 'Engineering Manager',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-1">
-        <li>Member of the company's technology board -- a cross-unit leadership forum acting as the de-facto CTO function. Together with other senior engineering leaders, made final decisions on long-term technical strategy, architecture direction, and technology investments for 8 teams across 4 business units.</li>
-        <li>Lead a team of 6 engineers in the design, development, and implementation of features from conception to completion, ensuring adherence to quality standards, budget constraints, and project timelines. (Examples: Unified product data structure and product discovery process for 2 e-commerce brands; Communication and Data sync with SAP, Yotpo, ProductsUp)</li>
-        <li>Collaborated with cross-functional stakeholders to discover the best path for improving our product, prioritize feature development, and deliver high-quality solutions.</li>
-        <li>Mentored and coached team members through regular 1-on-1 meetings to foster a culture of learning and growth. (2 engineers progressing to Senior, 1 promoted to Senior)</li>
-        <li>Established performance metrics and KPIs focusing on team and business outcomes (DORA, collaborative metrics, click-through and add-to-cart rates).</li>
-        <li>Drove recruitment efforts throughout the full lifecycle. (100+ CVs reviewed, 20+ interviews, 4 new hires across 2 teams)</li>
+      <ul className="list-disc list-outside ml-4 space-y-2">
+        <li>Identified the need for an Engineering Manager function and drove internal advocacy for its introduction - working closely with the Head of Engineering to build the case against budget and organizational resistance. The change shifted engineering toward shared product ownership, with teams involved from idea challenge through delivery and outcome measurement.</li>
+        <li>Advocated for an inclusive team restructuring process, ensuring engineer input and interpersonal dynamics were considered alongside technical skills - collaborating with Scrum Masters to find team compositions that work well together, not just on paper.</li>
+        <li>Navigated sustained interpersonal conflict between a Principal Engineer and a Senior Engineer through repeated 1-on-1 coaching - helping each understand their own role in the dynamic and grow professionally from it, without taking sides.</li>
+        <li>Member of the company's technology board, contributing to long-term technical strategy, architecture direction, and technology investments across 8 teams and a 60+ person engineering organization.</li>
+        <li>Oversaw continued evolution of a multi-tenant, event-driven microservices platform on AWS, spanning 30+ internal services and 10+ external integrations - making architectural decisions around system boundaries, integration patterns (ACL, API gateways), and scalability, while ensuring observability and operational standards across teams.</li>
+        <li>Defined and drove adoption of company-wide engineering documentation standards across 6 domains, covering system architecture (C4), service-level documentation (README, Swagger, TECHDEBT), and flow diagrams (PlantUML) - reducing dependency on undocumented knowledge, improving onboarding and architectural clarity across teams.</li>
+        <li>Drove the professional development of 6 engineers through structured 1-on-1s and semi-annual career discussions, resulting in 3 seniority promotions.</li>
+        <li>Drove full recruitment lifecycle across 2 teams - reviewing 100+ CVs, conducting 20+ interviews, making 3 hires.</li>
       </ul>
     ),
   },
@@ -138,16 +141,16 @@ export const experience: TimelineItem[] = [
     startDate: 'Mar. 2021',
     endDate: 'Jun. 2023',
     company: 'Jochen Schweizer mydays Group',
+    companyDescriptor: 'Experience & Gift E-commerce · ~400 people · Munich',
     location: 'Munich, Germany',
     title: 'Principal Engineer',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-1">
-        <li>Worked closely with multiple teams to ensure engineering best practices were implemented and followed.</li>
-        <li>Collaborated with architects to design and implement the company's technology platform, ensuring scalability and efficiency (multi-tenant e-commerce solution using React micro-frontends and an event-driven microservice based backend powered by Kafka).</li>
-        <li>Researched, evaluated, and integrated third-party tools to improve engineering workflows while considering technical fit and cost. (Yotpo as external review management tool, Algolia as an AI powered search engine)</li>
-        <li>Acted as a key technical point of contact for stakeholders, ensuring transparent communication and effective collaboration.</li>
-        <li>Played a major role in recruitment, screening CVs, conducting technical interviews and onboarding engineers, ranging from juniors to architects. (200+ CVs reviewed, 30+ technical interviews, 5 new hires across 2 teams)</li>
-        <li>Conducted regular 1-on-1 meetings with engineers, providing mentorship and career guidance.</li>
+      <ul className="list-disc list-outside ml-4 space-y-2">
+        <li>Championed the architecture of a multi-tenant, event-driven microservices platform on AWS - driving key design decisions including strict event-driven and self-contained system boundaries, and the introduction of an Anti-Corruption Layer for SAP integration - advocating for long-term system integrity over short-term delivery shortcuts.</li>
+        <li>Defined and drove adoption of engineering standards across teams - covering testing guidelines (unit, component, integration, and E2E), Definition of Ready/Done, and deployment practices - bringing teams along through collaboration while enforcing non-negotiables where necessary.</li>
+        <li>Played a central role in recruitment across multiple roles - from junior engineers to architects and Scrum Masters - reviewing 200+ CVs and conducting 30+ technical interviews, resulting in 5 hires. Maintained hiring bar even when it meant closing searches without a hire.</li>
+        <li>Led evaluation and selection of third-party tools - assessing functionality, pricing, and technical fit across multiple candidates - with recommendations accepted and integrated into the platform. (e.g. Yotpo for review management, Algolia for AI-powered search)</li>
+        <li>Contributed to ongoing architectural decisions around micro-frontend boundaries - balancing reusability against data-fetching overhead, with a mindset of continuous re-evaluation rather than a fixed solution.</li>
       </ul>
     ),
   },
@@ -155,13 +158,14 @@ export const experience: TimelineItem[] = [
     startDate: 'Jul. 2019',
     endDate: 'Feb. 2021',
     company: 'Jochen Schweizer mydays Group',
+    companyDescriptor: 'Experience & Gift E-commerce · ~400 people · Munich',
     location: 'Munich, Germany',
     title: 'Full Stack Software Engineer',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-1">
-        <li>Developed and implemented new features from conception to production, collaborating closely with Product Owners and Architects.</li>
-        <li>Helped introduce and implement an E2E testing framework, which became a key part of the company's quality assurance process.</li>
-        <li>Served as a team representative in the Nexus Scrum model, coordinating tasks between teams, unblocking engineers, and facilitating communication between technical and non-technical stakeholders.</li>
+      <ul className="list-disc list-outside ml-4 space-y-2">
+        <li>Developed and shipped features across the stack in close collaboration with Product Owners and Architects, contributing to the early foundation of the platform.</li>
+        <li>Helped introduce and implement the company's E2E testing framework, which became a core part of the quality assurance process across teams.</li>
+        <li>Served as team representative in the Nexus Scrum model - coordinating across teams, unblocking engineers, and bridging communication between technical and non-technical stakeholders.</li>
       </ul>
     ),
   },
@@ -169,10 +173,11 @@ export const experience: TimelineItem[] = [
     startDate: 'Mar. 2015',
     endDate: 'Jun. 2019',
     company: 'tecRacer GmbH & Co. KG',
+    companyDescriptor: 'Custom Software Development · ~100 people · Hannover',
     location: 'Hannover, Germany',
     title: '(Senior) Software Engineer',
     content: (
-      <ul className="list-disc list-outside ml-4 space-y-1">
+      <ul className="list-disc list-outside ml-4 space-y-2">
         <li>Developed web-based applications in an agile environment, working closely with customers to refine requirements and deliver high-quality solutions.</li>
         <li>Maintained and extended legacy code for long-running projects and built new applications from scratch.</li>
         <li>Acted as a key communication bridge between customers and developers, ensuring requirements were clear and technical solutions met expectations.</li>

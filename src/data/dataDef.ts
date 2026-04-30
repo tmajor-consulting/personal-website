@@ -1,4 +1,4 @@
-import {FC, PropsWithChildren, ReactElement, SVGProps} from 'react';
+import React, {FC, PropsWithChildren, ReactElement, SVGProps} from 'react';
 
 import {IconProps} from '../components/Icon/Icon';
 
@@ -53,11 +53,12 @@ export interface SkillGroup {
  */
 export interface TimelineItem {
   startDate: string;
-  endDate: string;
-  location: string;
-  company: string;
+  endDate?: string;
   title: string;
-  content: ReactElement;
+  company: string;
+  companyDescriptor?: string;
+  location: string;
+  content: React.ReactNode;
 }
 
 /**
