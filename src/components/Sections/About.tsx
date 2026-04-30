@@ -32,7 +32,7 @@ const About: FC = memo(() => {
         />
 
         <div className="relative mx-auto w-full max-w-6xl px-8 py-20 sm:px-12">
-          <div className="flex flex-col-reverse items-start gap-10 sm:grid sm:items-center sm:gap-16" style={{gridTemplateColumns: '1fr 160px'}}>
+          <div className="flex flex-col-reverse items-start gap-10 sm:grid sm:items-center sm:gap-16" style={{gridTemplateColumns: '1fr 220px'}}>
             {/* Left: text */}
             <div>
               <p
@@ -107,14 +107,9 @@ const About: FC = memo(() => {
                     </a>
                   ) : (
                     <a
-                      className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-medium transition-colors"
+                      className="inline-flex items-center gap-2 rounded-lg border border-white/20 px-5 py-2.5 text-sm font-medium text-white/70 transition-colors hover:border-white/40 hover:text-white"
                       href={href}
-                      key={text}
-                      style={{
-                        background: 'transparent',
-                        border: '1px solid rgba(255,255,255,0.2)',
-                        color: 'rgba(255,255,255,0.7)',
-                      }}>
+                      key={text}>
                       {text}
                     </a>
                   ),
@@ -125,11 +120,10 @@ const About: FC = memo(() => {
               <div className="flex gap-3.5">
                 {socialLinks.map(({label, href}) => (
                   <a
-                    className="font-mono text-xs tracking-[0.04em] transition-colors"
+                    className="font-mono text-xs tracking-[0.04em] text-white/30 transition-colors hover:text-white/70"
                     href={href}
                     key={label}
                     rel="noopener noreferrer"
-                    style={{color: 'rgba(255,255,255,0.3)'}}
                     target="_blank">
                     {label}
                   </a>
@@ -139,7 +133,7 @@ const About: FC = memo(() => {
 
             {/* Right: circular profile photo */}
             <div
-              className="h-36 w-36 flex-shrink-0 overflow-hidden rounded-full sm:h-[160px] sm:w-[160px] sm:justify-self-end"
+              className="h-36 w-36 flex-shrink-0 overflow-hidden rounded-full sm:h-[220px] sm:w-[220px] sm:justify-self-end"
               style={{border: '3px solid rgba(255,255,255,0.1)'}}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img alt={name} className="h-full w-full object-cover" src={imageSrc} />
