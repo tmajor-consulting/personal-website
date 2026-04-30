@@ -21,8 +21,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'Tamas Flucsa Major',
-  description: "Personal Website of Tamas Flucsa Major",
+  title: 'Tamas Flucsa Major — Engineering Manager',
+  description: 'Engineering leader with 10+ years of experience. I build engineering cultures where teams are product partners.',
 };
 
 /**
