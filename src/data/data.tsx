@@ -58,7 +58,6 @@ export const aboutData: About = {
       href: '/assets/resume.pdf',
       text: 'Download CV',
       primary: true,
-      // @ts-expect-error heroicons ForwardRef component works at runtime
       Icon: DownloadIcon,
     },
     {

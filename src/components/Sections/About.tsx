@@ -106,7 +106,7 @@ const About: FC = memo(() => {
           <a
             aria-label="Scroll down"
             className="rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-            href={`/#${SectionId.Principles}`}>
+            href={`/#${SectionId.Highlights}`}>
             <ChevronDownIcon className="h-6 w-6 animate-bounce" />
           </a>
         </div>

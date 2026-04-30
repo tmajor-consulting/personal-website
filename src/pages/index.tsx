@@ -7,7 +7,6 @@ import Footer from '../components/Sections/Footer';
 import About from '../components/Sections/About';
 import Resume from '../components/Sections/Resume';
 import {homePageMeta} from '../data/data';
-import Principles from "../components/Sections/Principles";
 
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
 
@@ -17,7 +16,6 @@ const Home: FC = memo(() => {
     <Page description={description} title={title}>
       <Header />
       <About />
-      <Principles />
       <Resume />
       <Contact />
       <Footer />

@@ -30,19 +30,7 @@ interface AboutActionItem {
   href: string;
   text: string;
   primary?: boolean;
-  Icon?: (props: SVGProps<SVGSVGElement>) => ReactElement;
-}
-
-/**
- * Principles section
- */
-export interface Principles {
-  description: string;
-  principlesItems: PrinciplesItems[];
-}
-
-export interface PrinciplesItems {
-  text: string;
+  Icon?: FC<SVGProps<SVGSVGElement>> | ((props: SVGProps<SVGSVGElement>) => ReactElement);
 }
 
 /**
