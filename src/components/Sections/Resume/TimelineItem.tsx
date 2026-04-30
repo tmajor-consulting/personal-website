@@ -1,28 +1,9 @@
 import {FC, memo} from 'react';
 
 import type {TimelineItem} from '../../../data/dataDef';
-// import moment, {now} from "moment";
 
 const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
   const {title, startDate, endDate, location, content, company, companyDescriptor} = item;
-
-  // const momentEndDate = endDate === 'Present' ? moment(now()) : moment(endDate);
-  // const momentStartDate = moment(startDate);
-  //
-  // const dateDiff = moment.duration(momentEndDate.diff(momentStartDate));
-  // const durationYears = dateDiff.years();
-  // const durationMonths = dateDiff.months();
-  //
-  // const yearString = durationYears > 1 ? 'years' : 'year';
-  // const monthString = durationMonths > 1 ? 'months' : 'month';
-  //
-  // let duration = '';
-  // if (durationYears > 0) {
-  //   duration += `${durationYears} ${yearString}`
-  // }
-  // if (durationMonths > 0) {
-  //   duration += ` ${durationMonths} ${monthString}`
-  // }
 
 
   return (
@@ -36,7 +17,7 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
         <div className="mt-1 flex flex-wrap items-center gap-x-2">
           <span className="text-sm italic text-neutral-500">{location}</span>
           <span className="text-neutral-600">•</span>
-          <span className="text-sm text-neutral-500">{startDate} – {endDate}</span>
+          <span className="text-sm text-neutral-500">{startDate} – {endDate ?? 'Present'}</span>
         </div>
       </div>
       {content}
