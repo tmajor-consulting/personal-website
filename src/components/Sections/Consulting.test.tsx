@@ -24,8 +24,10 @@ describe('Consulting', () => {
     expect(screen.getByText('Team Building & Hiring')).toBeInTheDocument();
   });
 
-  it('renders the Get in touch CTA', () => {
+  it('renders the Get in touch CTA linking to contact section', () => {
     render(<Consulting />);
-    expect(screen.getByRole('link', {name: /get in touch/i})).toBeInTheDocument();
+    const cta = screen.getByRole('link', {name: /get in touch/i});
+    expect(cta).toBeInTheDocument();
+    expect(cta).toHaveAttribute('href', '#contact');
   });
 });
