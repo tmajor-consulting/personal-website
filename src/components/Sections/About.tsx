@@ -69,6 +69,20 @@ const About: FC = memo(() => {
               {displayed}
             </p>
             {description}
+            <div className="flex flex-wrap gap-2 mt-3">
+              <span
+                className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium border"
+                style={{background: 'rgba(74,222,128,0.15)', borderColor: 'rgba(74,222,128,0.35)', color: 'rgb(134,239,172)'}}>
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                Open to EM roles
+              </span>
+              <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-white/20 text-white/70">
+                Munich / Remote
+              </span>
+              <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-white/20 text-white/70">
+                10+ yrs experience
+              </span>
+            </div>
             <div className="flex gap-x-4 text-neutral-100">
               <Socials />
             </div>
