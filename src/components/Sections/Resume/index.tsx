@@ -25,7 +25,7 @@ const Resume: FC = memo(() => {
 
       {/* Skills section — rendered as a plain section to apply border-top */}
       <section
-        className="px-4 py-16 md:py-24 lg:px-8"
+        className="px-4 pt-10 pb-16 md:py-24 lg:px-8"
         id={SectionId.Skills}
         style={{
           background: 'var(--surface)',

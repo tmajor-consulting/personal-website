@@ -7,11 +7,8 @@ const TimelineItem: FC<{item: TimelineItem}> = memo(({item}) => {
 
   return (
     <div
-      className="grid gap-8 py-10 last:border-b-0"
-      style={{
-        gridTemplateColumns: '200px 1fr',
-        borderBottom: '1px solid var(--border)',
-      }}>
+      className="grid grid-cols-1 gap-4 py-8 last:border-b-0 md:grid-cols-[200px_1fr] md:gap-8 md:py-10"
+      style={{borderBottom: '1px solid var(--border)'}}>
       {/* Left: date + company */}
       <div className="flex flex-col gap-1 pt-0.5">
         <span className="font-mono text-[11px] tracking-[0.04em]" style={{color: 'var(--muted)'}}>
